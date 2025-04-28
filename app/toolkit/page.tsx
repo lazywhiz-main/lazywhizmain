@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import ArticleFilter from '../../components/ArticleFilter';
 
 export default function Toolkit() {
   // 記事データ
@@ -60,50 +61,54 @@ export default function Toolkit() {
       id: 'pomodoro',
       title: 'LazyPomodoro',
       description: 'カスタマイズ可能なポモドーロタイマー。作業と休憩のバランスを取りながら、生産性を向上させましょう。',
-      icon: '⏱️'
+      icon: '⏱️',
+      status: 'ready', // 実装済み
     },
     {
       id: 'note-taker',
       title: 'SmartNotes',
       description: 'AIアシスト機能付きのシンプルノートアプリ。会議の記録や素早いメモ取りに最適です。',
-      icon: '📝'
+      icon: '📝',
+      status: 'coming-soon', // 近日公開
     },
     {
       id: 'task-prioritizer',
       title: 'タスク優先度マトリックス',
       description: '重要性と緊急性に基づいてタスクを整理し、本当に集中すべき作業を明確にします。',
-      icon: '📊'
+      icon: '📊',
+      status: 'coming-soon', // 近日公開
     },
     {
       id: 'meeting-calculator',
       title: '会議コスト計算機',
       description: '参加者の人数と時間から会議の実コストを算出。本当にその会議が必要かを判断する指標に。',
-      icon: '💰'
+      icon: '💰',
+      status: 'coming-soon', // 近日公開
     }
   ];
 
   // カテゴリーでフィルタリングするための準備
-  const categories = Array.from(new Set(articles.map(article => article.category)));
+  const categories = ['すべて', ...Array.from(new Set(articles.map(article => article.category)))];
 
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center overflow-hidden">
+      <section className="relative min-h-[60vh] py-16 flex items-center overflow-hidden">
         {/* 背景グラデーション */}
         <div className="absolute inset-0 bg-gradient-to-br from-white via-brand-200/40 to-neutral-50 z-0"></div>
         
         {/* 装飾要素 */}
         <div className="absolute right-0 top-10 w-1/3 h-1/2 bg-brand-500 rounded-full opacity-10 blur-3xl"></div>
-        <div className="absolute -left-20 bottom-20 w-64 h-64 bg-[#E57373] rounded-full opacity-5"></div>
+        <div className="absolute -left-20 bottom-20 w-64 h-64 bg-[#F5ADA8] rounded-full opacity-5"></div>
         <div className="absolute right-1/4 bottom-10 w-32 h-32 bg-brand-200 rounded-full opacity-40"></div>
         
         <div className="container relative z-10">
           <div className="max-w-2xl">
-            <span className="inline-block mb-4 px-4 py-2 bg-brand-200 text-brand-600 rounded-full text-sm font-medium">知恵とツール</span>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
+            <span className="inline-block mb-6 px-4 py-2 bg-brand-200 text-brand-600 rounded-full text-sm font-medium">知恵とツール</span>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="text-brand-500">ツール</span>キット
             </h1>
-            <p className="text-xl text-text-medium mb-10 max-w-xl">
+            <p className="text-lg md:text-xl text-text-medium mb-8 max-w-2xl">
               賢く怠けるための記事とミニツールコレクション。効率化のヒントからプラクティカルなWebツールまで、あなたの生産性向上をサポートします。
             </p>
           </div>
@@ -122,52 +127,11 @@ export default function Toolkit() {
             <p className="mt-4 text-text-medium max-w-2xl mx-auto">賢く怠けるためのアイデアと実践的なテクニック</p>
           </div>
           
-          {/* フィルター（実際のプロジェクトではJS実装が必要） */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
-            <button className="px-4 py-2 text-sm bg-brand-500 text-white rounded-lg shadow-md hover:shadow-lg transition-all">
-              すべて
-            </button>
-            {categories.map((category, index) => (
-              <button key={index} className="px-4 py-2 text-sm bg-white hover:bg-brand-200 text-text-high border border-neutral-200 rounded-lg shadow-sm hover:shadow transition-all">
-                {category}
-              </button>
-            ))}
-          </div>
-          
-          {/* 記事リスト */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {articles.map((article) => (
-              <div key={article.id} className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transform transition hover:-translate-y-1">
-                <div className="p-8">
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="bg-brand-200 text-brand-600 px-3 py-1 text-xs rounded-full font-medium">
-                      {article.category}
-                    </span>
-                    <span className="text-xs text-text-medium flex items-center">
-                      <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                      </svg>
-                      {article.readTime}
-                    </span>
-                  </div>
-                  <h3 className="text-xl font-bold mb-4 text-text-high">{article.title}</h3>
-                  <p className="mb-6 text-text-medium">{article.description}</p>
-                  <div className="flex justify-between items-center">
-                    <span className="text-xs text-text-medium">{article.date}</span>
-                    <Link 
-                      href={`/toolkit/${article.id}`}
-                      className="inline-flex items-center text-brand-500 hover:text-brand-600 font-medium"
-                    >
-                      <span>続きを読む</span>
-                      <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                      </svg>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          {/* フィルター機能を別コンポーネントに分離 */}
+          <ArticleFilter 
+            articles={articles}
+            categories={categories}
+          />
           
           <div className="text-center mt-16">
             <Link href="/toolkit/archive" className="inline-flex items-center justify-center bg-white border-2 border-brand-500 text-brand-500 hover:bg-brand-500 hover:text-white px-8 py-4 rounded-lg font-medium transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
@@ -199,15 +163,24 @@ export default function Toolkit() {
                 <div className="w-20 h-20 bg-brand-200 rounded-full flex items-center justify-center text-4xl mx-auto mb-6">{tool.icon}</div>
                 <h3 className="text-2xl font-bold mb-4 text-text-high">{tool.title}</h3>
                 <p className="mb-6 text-text-medium">{tool.description}</p>
-                <Link
-                  href={`/toolkit/tools/${tool.id}`}
-                  className="inline-flex items-center justify-center bg-brand-500 hover:bg-brand-600 text-white px-6 py-3 rounded-lg font-medium transition-all"
-                >
-                  <span>ツールを使う</span>
-                  <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                  </svg>
-                </Link>
+                {tool.status === 'ready' ? (
+                  <Link
+                    href={`/toolkit/tools/${tool.id}`}
+                    className="inline-flex items-center justify-center bg-brand-500 hover:bg-brand-600 text-white px-6 py-3 rounded-lg font-medium transition-all"
+                  >
+                    <span>ツールを使う</span>
+                    <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                  </Link>
+                ) : (
+                  <button
+                    className="inline-flex items-center justify-center bg-neutral-200 text-text-medium cursor-not-allowed px-6 py-3 rounded-lg font-medium"
+                    disabled
+                  >
+                    <span>近日公開</span>
+                  </button>
+                )}
               </div>
             ))}
           </div>
@@ -231,17 +204,18 @@ export default function Toolkit() {
                 <p className="mt-4 text-text-medium">最新の記事やツール、「賢く怠ける」ためのヒントを定期的にお届けします。</p>
               </div>
               
-              <form className="space-y-6">
+              <form className="space-y-6" action="/api/newsletter" method="post">
                 <div className="flex flex-col md:flex-row gap-4">
                   <input
                     type="email"
+                    name="email"
                     placeholder="メールアドレスを入力"
                     className="flex-grow px-5 py-3 border border-neutral-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-500 text-text-medium"
                     required
                   />
                   <button
                     type="submit"
-                    className="inline-flex items-center justify-center bg-[#E57373] hover:bg-[#D32F2F] text-white px-8 py-3 rounded-lg font-medium transition-all shadow-md hover:shadow-lg"
+                    className="inline-flex items-center justify-center bg-[#F5ADA8] hover:bg-[#E2857B] text-white px-8 py-3 rounded-lg font-medium transition-all shadow-md hover:shadow-lg"
                   >
                     <span>登録する</span>
                     <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -299,11 +273,11 @@ export default function Toolkit() {
       {/* CTA Section */}
       <section className="py-32 relative overflow-hidden">
         {/* 背景 */}
-        <div className="absolute inset-0 bg-brand-500 z-0"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#F5ADA8] to-[#F5C0BB] z-0"></div>
         
         {/* 装飾要素 */}
-        <div className="absolute left-0 top-0 w-full h-full bg-brand-600 opacity-30 skew-y-6 -translate-y-1/2"></div>
-        <div className="absolute right-0 bottom-0 w-96 h-96 bg-brand-200 rounded-full opacity-20"></div>
+        <div className="absolute left-0 top-0 w-full h-full bg-[#F5ADA8] opacity-30 skew-y-6 -translate-y-1/2"></div>
+        <div className="absolute right-0 bottom-0 w-96 h-96 bg-[#F5D0CC] rounded-full opacity-20"></div>
         
         <div className="container relative z-10">
           <div className="max-w-3xl mx-auto text-center text-white">
@@ -311,7 +285,7 @@ export default function Toolkit() {
             <p className="text-xl mb-12 opacity-90">
               LazyWhizの受託サービスでは、あなたのビジネスに合わせたカスタム効率化ソリューションを提供しています。
             </p>
-            <Link href="/service" className="inline-flex items-center bg-white text-brand-500 hover:bg-neutral-50 px-10 py-5 rounded-lg font-bold text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+            <Link href="/service" className="inline-flex items-center bg-white text-[#E2857B] hover:bg-neutral-50 px-10 py-5 rounded-lg font-bold text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
               <span>サービスを見る</span>
               <svg className="ml-2 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>

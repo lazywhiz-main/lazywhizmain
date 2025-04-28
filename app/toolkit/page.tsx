@@ -1,0 +1,325 @@
+import React from 'react';
+import Link from 'next/link';
+
+export default function Toolkit() {
+  // 記事データ
+  const articles = [
+    {
+      id: 'efficiency-tips',
+      title: '【実践】会議の時間を半分に減らす5つのテクニック',
+      category: '生産性向上',
+      description: '無駄な会議に費やしている時間を取り戻しましょう。この記事では、会議時間を効率的に短縮するための実践的なテクニックを紹介します。',
+      date: '2023-12-15',
+      readTime: '8分'
+    },
+    {
+      id: 'automation-basics',
+      title: 'はじめての業務自動化：ノンプログラマーでもできる自動化入門',
+      category: '自動化',
+      description: 'プログラミングの知識がなくても始められる、シンプルな業務自動化の方法を解説。無料ツールを使った具体的な手順も紹介します。',
+      date: '2023-11-28',
+      readTime: '12分'
+    },
+    {
+      id: 'decision-making',
+      title: '意思決定疲れを解消する「3秒ルール」とは？',
+      category: '思考法',
+      description: '日々の小さな決断に時間とエネルギーを浪費していませんか？シンプルな「3秒ルール」を活用して、意思決定の効率を劇的に向上させる方法。',
+      date: '2023-10-30',
+      readTime: '7分'
+    },
+    {
+      id: 'remote-work',
+      title: 'リモートワークでの「ディープワーク」実現法',
+      category: '集中力',
+      description: '在宅勤務での集中力低下に悩んでいませんか？環境設定から時間管理まで、リモートワークで深い集中状態を作り出すための実践的なアプローチ。',
+      date: '2023-09-18',
+      readTime: '10分'
+    },
+    {
+      id: 'ai-tools',
+      title: '【2023年版】賢く使いこなしたいAI生産性ツール10選',
+      category: 'AIツール',
+      description: '最新のAIツールを活用して日々の業務を効率化。テキスト作成、画像生成、データ分析など、目的別のオススメツールとその活用法を紹介。',
+      date: '2023-08-25',
+      readTime: '15分'
+    },
+    {
+      id: 'digital-minimalism',
+      title: 'デジタル・ミニマリズム：オンライン生活を最適化する',
+      category: 'デジタルウェルビーイング',
+      description: 'デジタルツールやサービスの氾濫があなたの生産性を下げていませんか？必要なものだけを残し、オンライン生活をシンプルに整理する方法。',
+      date: '2023-07-10',
+      readTime: '9分'
+    }
+  ];
+
+  // ミニツールデータ
+  const tools = [
+    {
+      id: 'pomodoro',
+      title: 'LazyPomodoro',
+      description: 'カスタマイズ可能なポモドーロタイマー。作業と休憩のバランスを取りながら、生産性を向上させましょう。',
+      icon: '⏱️'
+    },
+    {
+      id: 'note-taker',
+      title: 'SmartNotes',
+      description: 'AIアシスト機能付きのシンプルノートアプリ。会議の記録や素早いメモ取りに最適です。',
+      icon: '📝'
+    },
+    {
+      id: 'task-prioritizer',
+      title: 'タスク優先度マトリックス',
+      description: '重要性と緊急性に基づいてタスクを整理し、本当に集中すべき作業を明確にします。',
+      icon: '📊'
+    },
+    {
+      id: 'meeting-calculator',
+      title: '会議コスト計算機',
+      description: '参加者の人数と時間から会議の実コストを算出。本当にその会議が必要かを判断する指標に。',
+      icon: '💰'
+    }
+  ];
+
+  // カテゴリーでフィルタリングするための準備
+  const categories = Array.from(new Set(articles.map(article => article.category)));
+
+  return (
+    <div>
+      {/* Hero Section */}
+      <section className="relative min-h-[60vh] flex items-center overflow-hidden">
+        {/* 背景グラデーション */}
+        <div className="absolute inset-0 bg-gradient-to-br from-white via-brand-200/40 to-neutral-50 z-0"></div>
+        
+        {/* 装飾要素 */}
+        <div className="absolute right-0 top-10 w-1/3 h-1/2 bg-brand-500 rounded-full opacity-10 blur-3xl"></div>
+        <div className="absolute -left-20 bottom-20 w-64 h-64 bg-[#E57373] rounded-full opacity-5"></div>
+        <div className="absolute right-1/4 bottom-10 w-32 h-32 bg-brand-200 rounded-full opacity-40"></div>
+        
+        <div className="container relative z-10">
+          <div className="max-w-2xl">
+            <span className="inline-block mb-4 px-4 py-2 bg-brand-200 text-brand-600 rounded-full text-sm font-medium">知恵とツール</span>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6">
+              <span className="text-brand-500">ツール</span>キット
+            </h1>
+            <p className="text-xl text-text-medium mb-10 max-w-xl">
+              賢く怠けるための記事とミニツールコレクション。効率化のヒントからプラクティカルなWebツールまで、あなたの生産性向上をサポートします。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Articles Section */}
+      <section className="py-24 relative">
+        {/* 装飾要素 */}
+        <div className="absolute left-0 top-1/4 w-48 h-48 bg-brand-200 rounded-full opacity-30 -translate-x-1/3"></div>
+        
+        <div className="container relative">
+          <div className="text-center mb-16">
+            <span className="inline-block px-4 py-1 bg-brand-200 text-brand-600 rounded-full text-sm font-medium mb-4">ナレッジ</span>
+            <h2 className="text-4xl font-bold text-text-high">記事</h2>
+            <p className="mt-4 text-text-medium max-w-2xl mx-auto">賢く怠けるためのアイデアと実践的なテクニック</p>
+          </div>
+          
+          {/* フィルター（実際のプロジェクトではJS実装が必要） */}
+          <div className="flex flex-wrap justify-center gap-3 mb-12">
+            <button className="px-4 py-2 text-sm bg-brand-500 text-white rounded-lg shadow-md hover:shadow-lg transition-all">
+              すべて
+            </button>
+            {categories.map((category, index) => (
+              <button key={index} className="px-4 py-2 text-sm bg-white hover:bg-brand-200 text-text-high border border-neutral-200 rounded-lg shadow-sm hover:shadow transition-all">
+                {category}
+              </button>
+            ))}
+          </div>
+          
+          {/* 記事リスト */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {articles.map((article) => (
+              <div key={article.id} className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transform transition hover:-translate-y-1">
+                <div className="p-8">
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="bg-brand-200 text-brand-600 px-3 py-1 text-xs rounded-full font-medium">
+                      {article.category}
+                    </span>
+                    <span className="text-xs text-text-medium flex items-center">
+                      <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                      </svg>
+                      {article.readTime}
+                    </span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-4 text-text-high">{article.title}</h3>
+                  <p className="mb-6 text-text-medium">{article.description}</p>
+                  <div className="flex justify-between items-center">
+                    <span className="text-xs text-text-medium">{article.date}</span>
+                    <Link 
+                      href={`/toolkit/${article.id}`}
+                      className="inline-flex items-center text-brand-500 hover:text-brand-600 font-medium"
+                    >
+                      <span>続きを読む</span>
+                      <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                      </svg>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          <div className="text-center mt-16">
+            <Link href="/toolkit/archive" className="inline-flex items-center justify-center bg-white border-2 border-brand-500 text-brand-500 hover:bg-brand-500 hover:text-white px-8 py-4 rounded-lg font-medium transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+              <span>記事アーカイブを見る</span>
+              <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Tools Section */}
+      <section className="py-24 bg-neutral-50 relative overflow-hidden">
+        {/* 装飾要素 */}
+        <div className="absolute right-0 top-0 w-96 h-96 bg-brand-500 rounded-full opacity-10 translate-x-1/3 -translate-y-1/3"></div>
+        <div className="absolute left-0 bottom-0 w-64 h-64 bg-brand-200 rounded-full opacity-30 -translate-x-1/3 translate-y-1/3"></div>
+        
+        <div className="container relative">
+          <div className="text-center mb-16">
+            <span className="inline-block px-4 py-1 bg-brand-200 text-brand-600 rounded-full text-sm font-medium mb-4">ユーティリティ</span>
+            <h2 className="text-4xl font-bold text-text-high">ミニツール</h2>
+            <p className="mt-4 text-text-medium max-w-2xl mx-auto">日々の作業を効率化するための便利なWebツール</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+            {tools.map((tool) => (
+              <div key={tool.id} className="bg-white p-8 rounded-xl shadow-lg text-center transform transition hover:shadow-xl hover:-translate-y-1">
+                <div className="w-20 h-20 bg-brand-200 rounded-full flex items-center justify-center text-4xl mx-auto mb-6">{tool.icon}</div>
+                <h3 className="text-2xl font-bold mb-4 text-text-high">{tool.title}</h3>
+                <p className="mb-6 text-text-medium">{tool.description}</p>
+                <Link
+                  href={`/toolkit/tools/${tool.id}`}
+                  className="inline-flex items-center justify-center bg-brand-500 hover:bg-brand-600 text-white px-6 py-3 rounded-lg font-medium transition-all"
+                >
+                  <span>ツールを使う</span>
+                  <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                  </svg>
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      
+      {/* Newsletter */}
+      <section className="py-24 relative overflow-hidden">
+        {/* 装飾要素 */}
+        <div className="absolute right-0 top-0 w-64 h-64 bg-brand-200 rounded-full opacity-20 translate-x-1/3 -translate-y-1/3"></div>
+        
+        <div className="container">
+          <div className="max-w-4xl mx-auto bg-white p-12 rounded-2xl shadow-xl relative overflow-hidden">
+            {/* 装飾要素 */}
+            <div className="absolute -right-24 -bottom-24 w-64 h-64 bg-brand-200 rounded-full opacity-20"></div>
+            
+            <div className="relative z-10">
+              <div className="text-center mb-8">
+                <span className="inline-block mb-2 px-4 py-1 bg-brand-200 text-brand-600 rounded-full text-sm font-medium">定期配信</span>
+                <h2 className="text-3xl font-bold text-text-high">LazyWhiz ニュースレター</h2>
+                <p className="mt-4 text-text-medium">最新の記事やツール、「賢く怠ける」ためのヒントを定期的にお届けします。</p>
+              </div>
+              
+              <form className="space-y-6">
+                <div className="flex flex-col md:flex-row gap-4">
+                  <input
+                    type="email"
+                    placeholder="メールアドレスを入力"
+                    className="flex-grow px-5 py-3 border border-neutral-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-brand-500 text-text-medium"
+                    required
+                  />
+                  <button
+                    type="submit"
+                    className="inline-flex items-center justify-center bg-[#E57373] hover:bg-[#D32F2F] text-white px-8 py-3 rounded-lg font-medium transition-all shadow-md hover:shadow-lg"
+                  >
+                    <span>登録する</span>
+                    <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path>
+                    </svg>
+                  </button>
+                </div>
+                <p className="text-xs text-text-medium text-center">
+                  ※ 配信は月2回程度です。いつでも解除できます。
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Articles */}
+      <section className="py-24 bg-neutral-50 relative overflow-hidden">
+        {/* 装飾要素 */}
+        <div className="absolute left-0 top-0 w-64 h-64 bg-brand-200 rounded-full opacity-30 -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute right-0 bottom-0 w-96 h-96 bg-brand-500 rounded-full opacity-10 translate-x-1/3 translate-y-1/3"></div>
+        
+        <div className="container relative">
+          <div className="text-center mb-16">
+            <span className="inline-block px-4 py-1 bg-brand-200 text-brand-600 rounded-full text-sm font-medium mb-4">おすすめ</span>
+            <h2 className="text-4xl font-bold text-text-high">人気記事</h2>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {articles.slice(0, 3).map((article) => (
+              <div key={article.id} className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transform transition hover:-translate-y-1">
+                <div className="p-6">
+                  <div className="flex items-center mb-4">
+                    <span className="bg-brand-200 text-brand-600 px-3 py-1 text-xs rounded-full font-medium">
+                      {article.category}
+                    </span>
+                  </div>
+                  <h3 className="text-xl font-bold mb-4 text-text-high">{article.title}</h3>
+                  <Link 
+                    href={`/toolkit/${article.id}`}
+                    className="inline-flex items-center text-brand-500 hover:text-brand-600 font-medium"
+                  >
+                    <span>続きを読む</span>
+                    <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-32 relative overflow-hidden">
+        {/* 背景 */}
+        <div className="absolute inset-0 bg-brand-500 z-0"></div>
+        
+        {/* 装飾要素 */}
+        <div className="absolute left-0 top-0 w-full h-full bg-brand-600 opacity-30 skew-y-6 -translate-y-1/2"></div>
+        <div className="absolute right-0 bottom-0 w-96 h-96 bg-brand-200 rounded-full opacity-20"></div>
+        
+        <div className="container relative z-10">
+          <div className="max-w-3xl mx-auto text-center text-white">
+            <h2 className="text-4xl font-bold mb-8">もっと効率的に<br />働きたいですか？</h2>
+            <p className="text-xl mb-12 opacity-90">
+              LazyWhizの受託サービスでは、あなたのビジネスに合わせたカスタム効率化ソリューションを提供しています。
+            </p>
+            <Link href="/service" className="inline-flex items-center bg-white text-brand-500 hover:bg-neutral-50 px-10 py-5 rounded-lg font-bold text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+              <span>サービスを見る</span>
+              <svg className="ml-2 w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+} 

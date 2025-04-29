@@ -34,6 +34,7 @@ const Footer = () => {
             <h4 className="font-bold mb-3 text-white">その他</h4>
             <ul className="space-y-2">
               <li><Link href="/legal" className="text-sm opacity-80 hover:opacity-100">法的情報</Link></li>
+              <li><Link href="/privacy-policy" className="text-sm opacity-80 hover:opacity-100">プライバシーポリシー</Link></li>
             </ul>
           </div>
         </div>

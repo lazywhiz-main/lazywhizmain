@@ -58,7 +58,7 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-text-high">受託開発</h3>
+              <h3 className="text-2xl font-bold mb-4 text-text-high">共創開発</h3>
               <p className="text-text-medium mb-6 flex-grow">あなたのビジネスに最適な技術ソリューションを提供します。本質に集中し、意味ある価値創出を共に目指します。</p>
               <Link href="/service" className="inline-flex items-center text-brand-500 hover:text-brand-600 font-medium mt-auto">
                 <span>詳しく見る</span>

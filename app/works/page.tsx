@@ -70,10 +70,10 @@ export default function Works() {
           <div className="max-w-4xl">
             <span className="inline-block mb-6 px-4 py-2 bg-brand-200 text-brand-600 rounded-full text-sm font-medium">LazyWhiz Works</span>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="text-brand-500">効率化</span>の実績紹介
+              <span className="text-brand-500">共創</span>の取り組み
             </h1>
             <p className="text-lg md:text-xl text-text-medium mb-8 max-w-2xl">
-              LazyWhizが手掛けた主要プロジェクトをご紹介します。「賢く怠ける」アプローチで、クライアントの課題をどのように解決し、どのような<span className="font-medium">時間短縮と価値創出</span>を実現したかをご覧ください。
+              LazyWhizが共に歩んだプロジェクトをご紹介します。効率化だけでなく、試行錯誤や挑戦の過程を通じて、クライアントと共に<span className="font-medium">成長と発見</span>を得た軌跡です。
             </p>
           </div>
         </div>
@@ -112,7 +112,7 @@ export default function Works() {
                       <svg className="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                       </svg>
-                      工数60%削減
+                      価値ある発見
                     </div>
                   </div>
                 </div>
@@ -157,20 +157,20 @@ export default function Works() {
               <h3 className="text-xl font-bold">LazyTip: プロジェクト選定の賢い基準</h3>
             </div>
             <p className="text-text-medium mb-5">
-              効率的なプロジェクト進行の鍵は、初期段階での優先順位付けにあります。私たちは「20:80の法則」を活用し、最も価値を生み出す20%の機能に集中することで、無駄な工数を削減しています。
+              意味あるプロジェクト選定の鍵は、目先の効率だけでなく長期的な価値にあります。私たちは「何を作るか」と同じくらい「何を作らないか」を大切にし、本質的な課題に集中するアプローチを実践しています。
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
               <div className="bg-neutral-50 p-3 rounded">
                 <div className="font-medium mb-1 text-brand-600">優先度の見極め</div>
-                <p>ビジネスインパクトとユーザー体験への影響度を数値化</p>
+                <p>意味と価値の再定義を通じて真に挑戦すべき課題を特定</p>
               </div>
               <div className="bg-neutral-50 p-3 rounded">
-                <div className="font-medium mb-1 text-brand-600">フェーズ分け</div>
-                <p>MVP→改善→拡張の3段階で価値を早期に創出</p>
+                <div className="font-medium mb-1 text-brand-600">挑戦と実験</div>
+                <p>失敗を学びに変える小さなサイクルで進化を加速</p>
               </div>
               <div className="bg-neutral-50 p-3 rounded">
-                <div className="font-medium mb-1 text-brand-600">自動化の徹底</div>
-                <p>繰り返し作業の特定と自動化で工数を大幅削減</p>
+                <div className="font-medium mb-1 text-brand-600">創造的な余白</div>
+                <p>本質以外を省くことで生まれる創造と発見の時間</p>
               </div>
             </div>
           </div>
@@ -182,9 +182,9 @@ export default function Works() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <span className="inline-block px-4 py-1 bg-brand-200 text-brand-600 rounded-full text-sm font-medium mb-4">Lazy Smart Approach</span>
-            <h2 className="text-3xl font-bold mb-4">賢く怠ける開発アプローチ</h2>
+            <h2 className="text-3xl font-bold mb-4">本質を見極める開発アプローチ</h2>
             <p className="text-lg text-text-medium max-w-2xl mx-auto">
-              最小限の労力で最大限の成果を実現するための、LazyWhiz独自の方法論
+              本当に価値あることに集中し、意味のある成果を生み出すためのLazyWhiz独自の方法論
             </p>
           </div>
           
@@ -215,10 +215,10 @@ export default function Works() {
               <div className="w-16 h-16 bg-gradient-to-br from-brand-200 to-brand-500 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 text-white">3</div>
               <h3 className="text-xl font-bold mb-3">効率と品質の両立</h3>
               <p className="mb-4">
-                「賢く怠ける」哲学に基づき、無駄を省きながらも品質を妥協しない開発アプローチを実践します。
+                「賢く怠ける」哲学をベースに、無駄を省きながらも挑戦と創造性を大切にする開発アプローチを実践します。
               </p>
               <div className="text-sm inline-block bg-neutral-50 px-3 py-1 rounded-full">
-                <span className="text-brand-600 font-medium">効果:</span> 開発期間40%短縮
+                <span className="text-brand-600 font-medium">効果:</span> 創造的な時間の確保
               </div>
             </div>
           </div>
@@ -232,7 +232,7 @@ export default function Works() {
             <span className="inline-block px-4 py-1 bg-brand-200 text-brand-600 rounded-full text-sm font-medium mb-4">Client Voice</span>
             <h2 className="text-3xl font-bold mb-4">お客様の声</h2>
             <p className="text-lg text-text-medium max-w-2xl mx-auto">
-              「賢く怠ける」アプローチがもたらした具体的な効果
+              共創による価値創出のストーリー
             </p>
           </div>
           
@@ -248,7 +248,7 @@ export default function Works() {
                   <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                 </div>
                 <p className="mb-4 text-lg italic">
-                  LazyWhizのアプローチは非常に効率的でした。無駄な作業を最小化し、本当に価値のある機能開発に集中してくれたおかげで、<span className="font-medium text-brand-600">開発期間を40%短縮</span>しながら期待以上の成果を得られました。
+                  LazyWhizとの協働は新しい視点をもたらしました。単なる効率化ではなく、私たちが本当に取り組むべき課題を見極め、<span className="font-medium text-brand-600">意味のある成果</span>に集中できたことで、チーム全体に新しい価値観が生まれました。
                 </p>
                 <div className="mb-4">
                   <p className="font-bold">田中 誠</p>
@@ -256,7 +256,7 @@ export default function Works() {
                 </div>
                 <div className="text-sm bg-neutral-50 p-3 rounded-lg">
                   <p className="font-medium text-brand-600">LazyWhizからの回答:</p>
-                  <p>田中様、ご信頼いただきありがとうございます。MVP開発のフェーズ分けと自動テスト導入が効率化に貢献できて嬉しいです。今後も「賢く怠ける」アプローチでサポートいたします。</p>
+                  <p>田中様、貴重なフィードバックをありがとうございます。「何をしないか」を決める勇気と「本質に集中する」姿勢が素晴らしい結果につながりました。私たちも多くを学ばせていただきました。</p>
                 </div>
               </div>
             </div>
@@ -272,7 +272,7 @@ export default function Works() {
                   <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
                 </div>
                 <p className="mb-4 text-lg italic">
-                  自動化プロジェクトを依頼しましたが、単なる技術導入ではなく、ビジネスプロセス全体を最適化する視点で提案してくれました。結果として、<span className="font-medium text-brand-600">運用コストを60%削減</span>し、業務効率を大幅に向上できました。
+                  最初は単なる業務効率化を期待していましたが、LazyWhizは私たちの課題の本質を探り、新しい可能性を示してくれました。失敗を恐れずに実験できる環境を作り、<span className="font-medium text-brand-600">創造的な挑戦</span>を後押ししてくれたことが最大の価値でした。
                 </p>
                 <div className="mb-4">
                   <p className="font-bold">佐藤 美咲</p>
@@ -280,7 +280,7 @@ export default function Works() {
                 </div>
                 <div className="text-sm bg-neutral-50 p-3 rounded-lg">
                   <p className="font-medium text-brand-600">LazyWhizからの回答:</p>
-                  <p>佐藤様、評価いただきありがとうございます。業務プロセスの可視化から始め、真に効果のある自動化ポイントを特定できたことが成功の鍵でした。引き続き改善のサポートをさせていただきます。</p>
+                  <p>佐藤様、共に挑戦できたことに感謝します。「効率化」と「創造性」は対立するものではなく、本質的な価値に集中することで両立できると信じています。今後も一緒に新しい可能性を探求していきましょう。</p>
                 </div>
               </div>
             </div>
@@ -296,24 +296,24 @@ export default function Works() {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold mb-6">あなたのプロジェクトも<br/>「賢く怠ける」成功事例に</h2>
+            <h2 className="text-3xl font-bold mb-6">あなたのプロジェクトも<br/>価値ある挑戦の物語に</h2>
             <p className="text-xl opacity-90 mb-8">
-              従来の方法では<span className="line-through px-2">100時間</span>かかる作業も、<br/>
-              LazyWhizなら<span className="font-bold underline">たった40時間</span>で同等以上の成果を。
+              ただ効率化するだけでなく<br/>
+              <span className="font-bold underline">本当に意味のあることに集中</span>する体験を。
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact" className="inline-flex items-center justify-center bg-white text-brand-600 hover:bg-opacity-90 px-8 py-4 rounded-lg font-medium transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
-                60分で効率化相談
+                60分で対話セッション
               </Link>
               <Link href="/service" className="inline-flex items-center justify-center border-2 border-white text-white hover:bg-white hover:text-brand-600 px-8 py-4 rounded-lg font-medium transition-all">
                 サービス一覧を見る
               </Link>
             </div>
             <p className="mt-6 text-sm opacity-80">
-              初回相談は無料・必要な場合のみお見積り・最短2週間で効果実感
+              初回相談は無料・プロジェクトの可能性を一緒に探求・あなたのペースで進行
             </p>
           </div>
         </div>

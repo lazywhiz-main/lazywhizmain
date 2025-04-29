@@ -59,7 +59,7 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="text-2xl font-bold mb-4 text-text-high">受託開発</h3>
-              <p className="text-text-medium mb-6 flex-grow">あなたのビジネスに最適な技術ソリューションを提供します。効率的な開発プロセスで、ビジネス成果を最大化。</p>
+              <p className="text-text-medium mb-6 flex-grow">あなたのビジネスに最適な技術ソリューションを提供します。本質に集中し、意味ある価値創出を共に目指します。</p>
               <Link href="/service" className="inline-flex items-center text-brand-500 hover:text-brand-600 font-medium mt-auto">
                 <span>詳しく見る</span>
                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -75,7 +75,7 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="text-2xl font-bold mb-4 text-text-high">ツールキット</h3>
-              <p className="text-text-medium mb-6 flex-grow">日々の作業を効率化するためのミニツールと、賢く働くためのアイデアを集めたコンテンツライブラリ。</p>
+              <p className="text-text-medium mb-6 flex-grow">日々の作業を本質化するためのミニツールと、賢く怠けるためのアイデアを集めたコンテンツライブラリ。</p>
               <Link href="/toolkit" className="inline-flex items-center text-brand-500 hover:text-brand-600 font-medium mt-auto">
                 <span>詳しく見る</span>
                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -91,7 +91,7 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="text-2xl font-bold mb-4 text-text-high">共創コミュニティ</h3>
-              <p className="text-text-medium mb-6 flex-grow">同じ志を持つクリエイターやビジネスパーソンが集まり、アイデアを共有し合う場所。</p>
+              <p className="text-text-medium mb-6 flex-grow">同じ志を持つ仲間と共に、意味ある挑戦と創造的な対話を通じて成長し合う場所。価値観を共有し、共に学び合います。</p>
               <Link href="/guild" className="inline-flex items-center text-brand-500 hover:text-brand-600 font-medium mt-auto">
                 <span>詳しく見る</span>
                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -111,8 +111,8 @@ export default function Home() {
         
         <div className="container relative">
           <div className="text-center mb-16">
-            <span className="inline-block px-4 py-1 bg-brand-200 text-brand-600 rounded-full text-sm font-medium mb-4">実績</span>
-            <h2 className="text-4xl font-bold text-text-high">実績紹介</h2>
+            <span className="inline-block px-4 py-1 bg-brand-200 text-brand-600 rounded-full text-sm font-medium mb-4">共創の取り組み</span>
+            <h2 className="text-4xl font-bold text-text-high">価値ある挑戦</h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
@@ -129,7 +129,7 @@ export default function Home() {
               </div>
               <div className="p-8">
                 <h3 className="text-2xl font-bold mb-3 text-text-high">プロジェクト事例 1</h3>
-                <p className="text-text-medium mb-6">効率的なワークフローを実現するためのダッシュボードアプリケーション。ユーザー体験を重視したUIデザインと、データ処理の最適化を実現。</p>
+                <p className="text-text-medium mb-6">共創的なアプローチで開発したダッシュボードアプリケーション。本質的な課題に集中し、ユーザー体験を重視した意味ある機能設計を実現。</p>
                 <Link href="/works/1" className="inline-flex items-center text-brand-500 hover:text-brand-600 font-medium">
                   <span>詳細を見る</span>
                   <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -152,7 +152,7 @@ export default function Home() {
               </div>
               <div className="p-8">
                 <h3 className="text-2xl font-bold mb-3 text-text-high">プロジェクト事例 2</h3>
-                <p className="text-text-medium mb-6">時間管理を最適化するためのモバイルアプリケーション。直感的な操作性と、ユーザーの行動パターンを学習する機能を搭載。</p>
+                <p className="text-text-medium mb-6">時間管理の本質を見つめ直したモバイルアプリケーション。直感的な操作性と、ユーザーの真のニーズに応える創造的な機能を提供。</p>
                 <Link href="/works/2" className="inline-flex items-center text-brand-500 hover:text-brand-600 font-medium">
                   <span>詳細を見る</span>
                   <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -185,9 +185,9 @@ export default function Home() {
         
         <div className="container relative z-10">
           <div className="max-w-3xl mx-auto text-center text-white">
-            <h2 className="text-4xl font-bold mb-8">あなたのプロジェクトを<br />一緒に実現しませんか？</h2>
+            <h2 className="text-4xl font-bold mb-8">意味ある挑戦を<br />一緒に始めませんか？</h2>
             <p className="text-xl mb-12 opacity-90">
-              LazyWhizは、あなたのビジネスの成長をサポートします。効率的な開発プロセスと創造的なアイデアで、最高の結果を生み出しましょう。
+              LazyWhizは、あなたの課題の本質を見極め、真に価値あるソリューションを共に創造します。探求と発見の対話から始めましょう。
             </p>
             <Link href="/contact" className="inline-flex items-center bg-white text-brand-500 hover:bg-neutral-50 px-10 py-5 rounded-lg font-bold text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
               <span>お問い合わせ</span>

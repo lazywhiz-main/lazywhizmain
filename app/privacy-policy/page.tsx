@@ -53,7 +53,7 @@ export default function PrivacyPolicy() {
       </section>
 
       <footer className="text-sm text-text-medium">
-        <p>最終更新日：2024年3月21日</p>
+        <p>最終更新日：2024年3月22日</p>
       </footer>
     </div>
   );

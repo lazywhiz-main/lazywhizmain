@@ -5,7 +5,7 @@ export default function GuildPage() {
   return (
     <main>
       {/* Hero Section - 改良版 */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-brand-200/30 via-white to-neutral-50 py-16">
+      <section className="relative min-h-[60vh] py-16 overflow-hidden bg-gradient-to-br from-brand-200/30 via-white to-neutral-50">
         {/* 装飾要素 */}
         <div className="absolute right-0 top-20 w-64 h-64 bg-brand-500 rounded-full opacity-10 blur-3xl"></div>
         <div className="absolute -left-20 bottom-20 w-72 h-72 bg-[#E57373] rounded-full opacity-5"></div>
@@ -14,11 +14,11 @@ export default function GuildPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <span className="inline-block mb-6 px-4 py-2 bg-brand-200 text-brand-600 rounded-full text-sm font-medium">LazyWhiz Community</span>
-            <h1 className="text-5xl md:text-6xl font-bold mb-8">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="text-text-high">仲間と</span>
               <span className="text-brand-500">賢く怠ける</span>
             </h1>
-            <p className="text-xl text-text-medium mb-10 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-text-medium mb-8 max-w-2xl mx-auto">
               クリエイターやビジネスパーソンが集まり、アイデアを共有し、協力して新しい価値を生み出すコミュニティです。ミニマムな労力で最大限の成果を目指す仲間が集まっています。
             </p>
             

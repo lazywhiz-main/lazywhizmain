@@ -14,12 +14,12 @@ export default function About() {
         <div className="absolute left-20 bottom-1/4 w-24 h-24 bg-brand-500 rounded-full opacity-10"></div>
         
         <div className="container relative z-10">
-          <div className="max-w-2xl">
+          <div className="max-w-3xl">
             <h1 className="text-6xl md:text-7xl font-bold text-text-high mb-6">
               余白が、<br />
               <span className="text-brand-500">あなたを冴えさせる。</span>
             </h1>
-            <p className="text-xl text-text-medium mb-10 max-w-lg">
+            <p className="text-xl text-text-medium mb-10 max-w-xl">
               必要なものだけを残し、余計なものを削ぎ落とす。
               そこから生まれる「余白」こそが、創造性と効率の源泉です。
             </p>

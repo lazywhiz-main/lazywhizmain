@@ -15,27 +15,29 @@ export default function Contact() {
     setErrorMessage('');
 
     const formData = new FormData(e.currentTarget);
-    const formValues = {
-      name: formData.get('name') as string,
-      email: formData.get('email') as string,
-      inquiry_type: formData.get('inquiry_type') as string,
-      budget: formData.get('budget') as string,
-      message: formData.get('message') as string,
-    };
+    const form = e.currentTarget;
 
     try {
-      // 実際のプロジェクトではここにAPIエンドポイントへのfetchリクエストを実装
-      // 現在はモックアップとして、1秒後に成功する処理を実装
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        body: formData,
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || '送信に失敗しました');
+      }
+
+      // フォームをリセット（submitStatusの設定前に行う）
+      form.reset();
       
       // 成功時の処理
       setSubmitStatus('success');
-      // フォームをリセット
-      e.currentTarget.reset();
     } catch (error) {
       // エラー処理
       setSubmitStatus('error');
-      setErrorMessage('送信に失敗しました。しばらく経ってからもう一度お試しください。');
+      setErrorMessage(error instanceof Error ? error.message : '送信に失敗しました。しばらく経ってからもう一度お試しください。');
       console.error('送信エラー:', error);
     } finally {
       setIsSubmitting(false);
@@ -45,7 +47,7 @@ export default function Contact() {
   return (
     <div>
       {/* Hero Section - 改良版 */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-brand-200/30 via-white to-neutral-50 py-16">
+      <section className="relative min-h-[60vh] py-16 overflow-hidden bg-gradient-to-br from-brand-200/30 via-white to-neutral-50">
         {/* 装飾要素 */}
         <div className="absolute right-0 top-20 w-64 h-64 bg-brand-500 rounded-full opacity-10 blur-3xl"></div>
         <div className="absolute -left-20 bottom-20 w-72 h-72 bg-[#E57373] rounded-full opacity-5"></div>
@@ -58,7 +60,7 @@ export default function Contact() {
               <span className="text-text-high">効率的に</span>
               <span className="text-brand-500">ひと声</span>かける
             </h1>
-            <p className="text-lg max-w-2xl mb-8">
+            <p className="text-lg md:text-xl text-text-medium mb-8 max-w-2xl">
               LazyWhizへのお問い合わせ、ご相談はこちらからお気軽にどうぞ。
               <span className="font-medium">最小限の入力で最大限の成果</span>を得るための効率的な相談フォームをご用意しました。
             </p>
@@ -83,7 +85,7 @@ export default function Contact() {
                     <h3 className="font-medium">お問い合わせを送信しました</h3>
                   </div>
                   <p className="text-sm">
-                    ありがとうございます。2営業日以内にご返信いたします。
+                    ありがとうございます。ご記入いただいたメールアドレスに確認メールが送信されています。2営業日以内にご返信いたします。
                   </p>
                 </div>
               )}
@@ -104,136 +106,152 @@ export default function Contact() {
               )}
 
               {/* LazyTip */}
-              <div className="mb-8 bg-brand-50 p-5 rounded-lg border border-brand-200">
-                <div className="flex items-center mb-2">
-                  <div className="text-brand-500 mr-2">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                    </svg>
+              {submitStatus !== 'success' && (
+                <div className="mb-8 bg-brand-50 p-5 rounded-lg border border-brand-200">
+                  <div className="flex items-center mb-2">
+                    <div className="text-brand-500 mr-2">
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                      </svg>
+                    </div>
+                    <h3 className="font-medium text-text-high">LazyTip: 効率的な相談のコツ</h3>
                   </div>
-                  <h3 className="font-medium text-text-high">LazyTip: 効率的な相談のコツ</h3>
+                  <p className="text-sm text-text-medium">
+                    具体的な課題と目標を明確に伝えることで、より的確な提案が可能になります。また、現状の課題点を優先度順に列挙いただくと、効率的に解決策を提示できます。
+                  </p>
                 </div>
-                <p className="text-sm text-text-medium">
-                  具体的な課題と目標を明確に伝えることで、より的確な提案が可能になります。また、現状の課題点を優先度順に列挙いただくと、効率的に解決策を提示できます。
-                </p>
-              </div>
+              )}
               
-              <form className="space-y-6" onSubmit={handleSubmit}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="name" className="block text-text-high font-medium mb-2">
-                      お名前 <span className="text-[#E57373]">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      className="w-full px-4 py-3 rounded-lg border border-neutral-200 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all"
-                      placeholder="山田 太郎"
-                      required
-                      disabled={isSubmitting}
-                    />
+              {submitStatus !== 'success' ? (
+                <form className="space-y-6" onSubmit={handleSubmit}>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="name" className="block text-text-high font-medium mb-2">
+                        お名前 <span className="text-[#E57373]">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        className="w-full px-4 py-3 rounded-lg border border-neutral-200 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all"
+                        placeholder="山田 太郎"
+                        required
+                        disabled={isSubmitting}
+                      />
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="email" className="block text-text-high font-medium mb-2">
+                        メールアドレス <span className="text-[#E57373]">*</span>
+                      </label>
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        className="w-full px-4 py-3 rounded-lg border border-neutral-200 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all"
+                        placeholder="your-email@example.com"
+                        required
+                        disabled={isSubmitting}
+                      />
+                    </div>
                   </div>
                   
                   <div>
-                    <label htmlFor="email" className="block text-text-high font-medium mb-2">
-                      メールアドレス <span className="text-[#E57373]">*</span>
+                    <label htmlFor="inquiry_type" className="block text-text-high font-medium mb-2">
+                      お問い合わせの種類 <span className="text-[#E57373]">*</span>
                     </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      className="w-full px-4 py-3 rounded-lg border border-neutral-200 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all"
-                      placeholder="your-email@example.com"
+                    <select
+                      id="inquiry_type"
+                      name="inquiry_type"
+                      className="w-full px-4 py-3 rounded-lg border border-neutral-200 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all bg-white"
                       required
                       disabled={isSubmitting}
-                    />
+                    >
+                      <option value="">選択してください</option>
+                      <option value="service">サービスに関するお問い合わせ</option>
+                      <option value="project">プロジェクトのご相談</option>
+                      <option value="quote">お見積もり依頼</option>
+                      <option value="interview">取材・講演依頼</option>
+                      <option value="other">その他</option>
+                    </select>
                   </div>
-                </div>
-                
-                <div>
-                  <label htmlFor="inquiry_type" className="block text-text-high font-medium mb-2">
-                    お問い合わせの種類 <span className="text-[#E57373]">*</span>
-                  </label>
-                  <select
-                    id="inquiry_type"
-                    name="inquiry_type"
-                    className="w-full px-4 py-3 rounded-lg border border-neutral-200 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all bg-white"
-                    required
-                    disabled={isSubmitting}
+                  
+                  <div>
+                    <label htmlFor="budget" className="block text-text-high font-medium mb-2">
+                      予算感
+                    </label>
+                    <select
+                      id="budget"
+                      name="budget"
+                      className="w-full px-4 py-3 rounded-lg border border-neutral-200 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all bg-white"
+                      disabled={isSubmitting}
+                    >
+                      <option value="">選択してください</option>
+                      <option value="low">〜50万円</option>
+                      <option value="medium">50万円〜100万円</option>
+                      <option value="high">100万円〜300万円</option>
+                      <option value="enterprise">300万円〜</option>
+                      <option value="undecided">未定</option>
+                    </select>
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="message" className="block text-text-high font-medium mb-2">
+                      メッセージ <span className="text-[#E57373]">*</span>
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows={6}
+                      className="w-full px-4 py-3 rounded-lg border border-neutral-200 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all"
+                      placeholder="ご質問・ご相談内容をご記入ください"
+                      required
+                      disabled={isSubmitting}
+                    ></textarea>
+                  </div>
+                  
+                  <div>
+                    <button
+                      type="submit"
+                      className="w-full py-4 bg-brand-500 hover:bg-brand-600 text-white rounded-lg font-medium transition-all flex items-center justify-center disabled:opacity-70 disabled:cursor-not-allowed"
+                      disabled={isSubmitting}
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          </svg>
+                          送信中...
+                        </>
+                      ) : (
+                        <>
+                          <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+                          </svg>
+                          送信する
+                        </>
+                      )}
+                    </button>
+                  </div>
+                  
+                  <p className="text-sm text-text-medium text-center">
+                    <span className="text-[#E57373]">*</span> は必須項目です。通常2営業日以内にご返信いたします。
+                  </p>
+                </form>
+              ) : (
+                <div className="flex flex-col items-center justify-center py-6">
+                  <Link 
+                    href="/" 
+                    className="inline-flex items-center justify-center bg-brand-500 hover:bg-brand-600 text-white px-6 py-3 rounded-lg font-medium transition-all mt-4"
                   >
-                    <option value="">選択してください</option>
-                    <option value="service">サービスに関するお問い合わせ</option>
-                    <option value="project">プロジェクトのご相談</option>
-                    <option value="quote">お見積もり依頼</option>
-                    <option value="interview">取材・講演依頼</option>
-                    <option value="other">その他</option>
-                  </select>
+                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                    トップページに戻る
+                  </Link>
                 </div>
-                
-                <div>
-                  <label htmlFor="budget" className="block text-text-high font-medium mb-2">
-                    予算感
-                  </label>
-                  <select
-                    id="budget"
-                    name="budget"
-                    className="w-full px-4 py-3 rounded-lg border border-neutral-200 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all bg-white"
-                    disabled={isSubmitting}
-                  >
-                    <option value="">選択してください</option>
-                    <option value="low">〜50万円</option>
-                    <option value="medium">50万円〜100万円</option>
-                    <option value="high">100万円〜300万円</option>
-                    <option value="enterprise">300万円〜</option>
-                    <option value="undecided">未定</option>
-                  </select>
-                </div>
-                
-                <div>
-                  <label htmlFor="message" className="block text-text-high font-medium mb-2">
-                    メッセージ <span className="text-[#E57373]">*</span>
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={6}
-                    className="w-full px-4 py-3 rounded-lg border border-neutral-200 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all"
-                    placeholder="ご質問・ご相談内容をご記入ください"
-                    required
-                    disabled={isSubmitting}
-                  ></textarea>
-                </div>
-                
-                <div>
-                  <button
-                    type="submit"
-                    className="w-full py-4 bg-brand-500 hover:bg-brand-600 text-white rounded-lg font-medium transition-all flex items-center justify-center disabled:opacity-70 disabled:cursor-not-allowed"
-                    disabled={isSubmitting}
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                        </svg>
-                        送信中...
-                      </>
-                    ) : (
-                      <>
-                        <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
-                        </svg>
-                        送信する
-                      </>
-                    )}
-                  </button>
-                </div>
-                
-                <p className="text-sm text-text-medium text-center">
-                  <span className="text-[#E57373]">*</span> は必須項目です。通常2営業日以内にご返信いたします。
-                </p>
-              </form>
+              )}
             </div>
           </div>
         </div>

@@ -60,7 +60,7 @@ export default function Works() {
   return (
     <div>
       {/* Hero Section - 改良版 */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-brand-200/30 via-white to-neutral-50 py-16">
+      <section className="relative min-h-[60vh] py-16 overflow-hidden bg-gradient-to-br from-brand-200/30 via-white to-neutral-50">
         {/* 装飾要素 */}
         <div className="absolute right-0 top-20 w-64 h-64 bg-brand-500 rounded-full opacity-10 blur-3xl"></div>
         <div className="absolute -left-20 bottom-20 w-72 h-72 bg-[#E57373] rounded-full opacity-5"></div>
@@ -72,7 +72,7 @@ export default function Works() {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
               <span className="text-brand-500">効率化</span>の実績紹介
             </h1>
-            <p className="text-lg max-w-2xl mb-8">
+            <p className="text-lg md:text-xl text-text-medium mb-8 max-w-2xl">
               LazyWhizが手掛けた主要プロジェクトをご紹介します。「賢く怠ける」アプローチで、クライアントの課題をどのように解決し、どのような<span className="font-medium">時間短縮と価値創出</span>を実現したかをご覧ください。
             </p>
           </div>

@@ -47,7 +47,7 @@ export default function About() {
             
             <div className="prose prose-lg text-text-medium">
               <p className="lead text-xl">
-                LazyWhizは「賢く怠ける」をコンセプトに、最小限の労力で最大限の成果を出すための知恵とツールを提供します。私たちが目指すのは、無駄な作業や過剰な負担から解放され、本当に大切なことに集中できる世界です。
+                LazyWhizは「頑張りすぎず、賢く生きる」をコンセプトに、最小限の労力で最大限の成果を出すための知恵とツールを提供します。私たちが目指すのは、無駄な作業や過剰な負担から解放され、本当に大切なことに集中できる世界です。
               </p>
               
               <p>
@@ -62,7 +62,7 @@ export default function About() {
       <section id="principles" className="py-24 bg-neutral-50">
         <div className="container">
           <h2 className="text-4xl font-bold mb-16 text-center text-text-high">
-            賢い怠け方 <span className="text-brand-500">5</span>箇条
+            賢く怠ける <span className="text-brand-500">5</span>箇条
           </h2>
           
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
@@ -128,7 +128,7 @@ export default function About() {
           <div className="max-w-3xl mx-auto text-center text-white">
             <h2 className="text-4xl font-bold mb-8">原則を試してみませんか？</h2>
             <p className="text-xl mb-12">
-              LazyWhizの「賢く怠ける」原則をあなたの日常に取り入れてみませんか？
+              LazyWhizの「頑張りすぎず、賢く生きる」原則をあなたの日常に取り入れてみませんか？
               実践的なツールやヒントで、より効率的で創造的な毎日をサポートします。
             </p>
             <Link href="/toolkit" className="inline-flex items-center bg-white text-brand-500 hover:bg-neutral-50 px-10 py-5 rounded-lg font-bold text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">

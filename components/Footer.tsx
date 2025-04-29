@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <h3 className="text-xl font-bold mb-4 text-white">LazyWhiz</h3>
-            <p className="text-sm opacity-80">賢く怠けるためのツールと知恵</p>
+            <p className="text-sm opacity-80">頑張りすぎず、賢く生きるためのツールと知恵</p>
           </div>
           
           <div>

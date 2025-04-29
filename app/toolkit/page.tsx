@@ -109,7 +109,7 @@ export default function Toolkit() {
               <span className="text-brand-500">ツール</span>キット
             </h1>
             <p className="text-lg md:text-xl text-text-medium mb-8 max-w-2xl">
-              賢く怠けるための記事とミニツールコレクション。効率化のヒントからプラクティカルなWebツールまで、あなたの生産性向上をサポートします。
+              頑張りすぎず、賢く生きるための記事とミニツールコレクション。効率化のヒントからプラクティカルなWebツールまで、あなたの生産性向上をサポートします。
             </p>
           </div>
         </div>
@@ -124,7 +124,7 @@ export default function Toolkit() {
           <div className="text-center mb-16">
             <span className="inline-block px-4 py-1 bg-brand-200 text-brand-600 rounded-full text-sm font-medium mb-4">ナレッジ</span>
             <h2 className="text-4xl font-bold text-text-high">記事</h2>
-            <p className="mt-4 text-text-medium max-w-2xl mx-auto">賢く怠けるためのアイデアと実践的なテクニック</p>
+            <p className="mt-4 text-text-medium max-w-2xl mx-auto">頑張りすぎず、賢く生きるためのアイデアと実践的なテクニック</p>
           </div>
           
           {/* フィルター機能を別コンポーネントに分離 */}
@@ -201,7 +201,7 @@ export default function Toolkit() {
               <div className="text-center mb-8">
                 <span className="inline-block mb-2 px-4 py-1 bg-brand-200 text-brand-600 rounded-full text-sm font-medium">定期配信</span>
                 <h2 className="text-3xl font-bold text-text-high">LazyWhiz ニュースレター</h2>
-                <p className="mt-4 text-text-medium">最新の記事やツール、「賢く怠ける」ためのヒントを定期的にお届けします。</p>
+                <p className="mt-4 text-text-medium">最新の記事やツール、「頑張りすぎず、賢く生きる」ためのヒントを定期的にお届けします。</p>
               </div>
               
               <form className="space-y-6" action="/api/newsletter" method="post">

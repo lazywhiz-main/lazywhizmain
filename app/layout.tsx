@@ -5,8 +5,8 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'LazyWhiz - 賢く怠ける',
-  description: 'LazyWhiz - 賢く怠けるためのツールと知恵',
+  title: 'LazyWhiz - 頑張りすぎず、賢く生きる',
+  description: 'LazyWhiz - 頑張りすぎず、賢く生きるためのツールと知恵',
 };
 
 export default function RootLayout({

@@ -351,7 +351,7 @@ export default function Service() {
           </h2>
           
           <p className="text-text-medium text-center max-w-3xl mx-auto mb-12">
-            思いついた瞬間、すぐ試せるダウンロード資産を揃えました。どれもワンコイン前後。ちょっとした"賢い怠け方"の種としてご活用ください。
+            思いついた瞬間、すぐ試せるダウンロード資産を揃えました。どれもワンコイン前後。ちょっとした"頑張りすぎず、賢く生きる"ための種としてご活用ください。
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">

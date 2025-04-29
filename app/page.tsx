@@ -19,11 +19,11 @@ export default function Home() {
           <div className="max-w-2xl">
             <span className="inline-block mb-4 px-4 py-2 bg-brand-200 text-brand-600 rounded-full text-sm font-medium">LazyWhiz コンセプト</span>
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              賢く怠ける、<br />
-              <span className="text-brand-500">創造的な未来へ</span>
+              頑張りすぎず、<br />
+              <span className="text-brand-500">賢く生きる未来へ</span>
             </h1>
             <p className="text-xl text-text-medium mb-10 max-w-xl">
-              LazyWhizは、最小限の労力で最大限の成果を生み出すための知恵とツールを提供します。賢く怠けることで、本当に大切なことに集中できる世界を目指しています。
+              LazyWhizは、最小限の労力で最大限の成果を生み出すための知恵とツールを提供します。頑張りすぎず賢く生きることで、本当に大切なことに集中できる世界を目指しています。
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/about" className="inline-flex items-center justify-center bg-brand-500 hover:bg-brand-600 text-white px-8 py-4 rounded-lg font-medium transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">

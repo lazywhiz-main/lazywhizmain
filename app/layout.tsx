@@ -3,6 +3,8 @@ import type { Metadata } from 'next';
 import React from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { GoogleAnalytics } from '@next/third-parties/google'
+import CookieConsent from '@/components/CookieConsent';
 
 export const metadata: Metadata = {
   title: 'LazyWhiz - 頑張りすぎず、賢く生きる',
@@ -47,6 +49,8 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <CookieConsent />
+        <GoogleAnalytics gaId="G-4CF7M2YVM1" />
       </body>
     </html>
   );

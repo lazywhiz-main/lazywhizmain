@@ -1,6 +1,15 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'LazyWhiz - 頑張りすぎず、賢く生きる | ホーム',
+  description: 'LazyWhizは本質に集中し、意味ある挑戦を共に創造するプラットフォームです。頑張りすぎず、賢く生きるためのツールと知恵を提供します。',
+  alternates: {
+    canonical: 'https://lazywhiz.io/',
+  },
+};
 
 export default function Home() {
   return (

@@ -57,7 +57,6 @@ export default function Contact() {
           <div className="max-w-4xl">
             <span className="inline-block mb-6 px-4 py-2 bg-brand-200 text-brand-600 rounded-full text-sm font-medium">LazyWhiz Contact</span>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="text-text-high">効率的に</span>
               <span className="text-brand-500">ひと声</span>かける
             </h1>
             <p className="text-lg md:text-xl text-text-medium mb-8 max-w-2xl">

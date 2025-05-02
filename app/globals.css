@@ -2,22 +2,155 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply bg-neutral-50 text-text-medium;
+:root {
+  --font-space-grotesk: 'Space Grotesk', system-ui, sans-serif;
+  --font-biz-udgothic: 'BIZ UDGothic', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  @apply text-text-high font-bold;
+/* フォントの表示調整 */
+.font-space {
+  font-family: var(--font-space-grotesk);
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-display: swap;
+}
+
+.font-biz {
+  font-family: var(--font-biz-udgothic);
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-display: swap;
+}
+
+/* フォントの読み込み最適化 */
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Space Grotesk Regular'), local('SpaceGrotesk-Regular');
+}
+
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('Space Grotesk SemiBold'), local('SpaceGrotesk-SemiBold');
+}
+
+@font-face {
+  font-family: 'BIZ UDGothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('BIZ UDGothic'), local('BIZUDGothic-Regular');
+}
+
+@font-face {
+  font-family: 'BIZ UDGothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('BIZ UDGothic Bold'), local('BIZUDGothic-Bold');
+}
+
+body {
+  @apply bg-neutral-50 text-text-medium font-biz antialiased;
+}
+
+/* 見出し階層のバランス調整 */
+h1 {
+  @apply text-text-high font-heading text-4xl md:text-5xl;
+}
+
+h2 {
+  @apply text-text-high font-heading text-3xl md:text-4xl;
+}
+
+h3 {
+  @apply text-text-high font-heading text-2xl md:text-3xl;
+}
+
+h4 {
+  @apply text-text-high font-heading text-xl md:text-2xl;
+}
+
+h5 {
+  @apply text-text-high font-heading text-lg md:text-xl;
+}
+
+h6 {
+  @apply text-text-high font-heading text-base md:text-lg;
+}
+
+/* 英語テキスト（ロゴ、見出し、UI要素）向け */
+.text-en {
+  @apply font-space;
+}
+
+/* 英語の見出し */
+h1.text-en, h2.text-en, h3.text-en, h4.text-en, h5.text-en, h6.text-en {
+  @apply font-space font-ui;
+}
+
+/* UI要素向け */
+.ui-element {
+  @apply font-space font-ui;
+}
+
+/* ロゴ用 */
+.logo {
+  @apply font-space font-ui tracking-wide;
 }
 
 a {
   @apply text-brand-500 hover:text-brand-600 transition-colors;
 }
 
+/* ボタンスタイル */
 .btn-primary {
-  @apply bg-brand-500 hover:bg-brand-600 text-white px-4 py-2 rounded transition-colors;
+  @apply bg-brand-500 hover:bg-brand-600 text-white px-4 py-2 rounded transition-colors font-space font-ui;
+}
+
+button, .button {
+  @apply font-space;
 }
 
 .container {
   @apply mx-auto px-4 max-w-7xl;
+}
+
+/* カードデザイン統一 */
+.card {
+  @apply bg-white rounded-lg border border-neutral-200 overflow-hidden transition-all hover:border-brand-200;
+}
+
+.card-highlighted {
+  @apply bg-white rounded-lg border-2 border-orange-200 overflow-hidden transition-all;
+}
+
+.card-new {
+  @apply bg-white rounded-lg border border-coral-200 overflow-hidden transition-all;
+}
+
+.font-heading {
+  font-family: 'BIZ UDGothic', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+  font-weight: 700;
+}
+
+.font-body {
+  font-family: 'BIZ UDGothic', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+  font-weight: 400;
+}
+
+.font-ui {
+  font-family: 'Space Grotesk', system-ui, Arial, sans-serif;
+  font-weight: 600;
 } 

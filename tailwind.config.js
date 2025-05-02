@@ -14,8 +14,14 @@ module.exports = {
           600: '#1B8A72',
         },
         coral: {
+          200: '#F5ADA8',
           500: '#E57373',
           600: '#D32F2F',
+        },
+        orange: {
+          200: '#F9C06A',
+          300: '#F8B142',
+          600: '#D98C23',
         },
         neutral: {
           50: '#F5F3EE',
@@ -25,6 +31,15 @@ module.exports = {
           high: '#111827',
           medium: '#374151',
         },
+      },
+      fontFamily: {
+        'space': ['var(--font-space-grotesk)', 'sans-serif'],
+        'biz': ['var(--font-biz-udgothic)', 'sans-serif'],
+      },
+      fontWeight: {
+        'heading': '700',
+        'body': '400',
+        'ui': '600',
       },
     },
   },

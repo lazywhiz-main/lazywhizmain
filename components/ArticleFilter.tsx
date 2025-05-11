@@ -52,7 +52,7 @@ export default function ArticleFilter({ articles, categories }: ArticleFilterPro
   return (
     <>
       {/* フィルター */}
-      <div className="flex flex-wrap justify-center gap-3 mb-12">
+      <div className="flex flex-wrap justify-center gap-3 mb-10">
         {categories.map((category, index) => (
           <FilterButton
             key={index}
@@ -64,7 +64,7 @@ export default function ArticleFilter({ articles, categories }: ArticleFilterPro
       </div>
       
       {/* 記事リスト */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         {filteredArticles.map((article) => (
           <div 
             key={article.id} 
@@ -73,8 +73,8 @@ export default function ArticleFilter({ articles, categories }: ArticleFilterPro
               article.isNew ? 'card-new' : 'card'
             }
           >
-            <div className="p-8">
-              <div className="flex items-center justify-between mb-4">
+            <div className="p-5">
+              <div className="flex items-center justify-between mb-3">
                 <span className="bg-brand-200 text-brand-600 px-3 py-1 text-xs rounded-full font-ui">
                   {article.category}
                 </span>
@@ -85,8 +85,8 @@ export default function ArticleFilter({ articles, categories }: ArticleFilterPro
                   {article.readTime}
                 </span>
               </div>
-              <h3 className="text-xl font-heading mb-4 text-text-high">{article.title}</h3>
-              <p className="mb-6 text-text-medium font-body">{article.description}</p>
+              <h3 className="text-xl font-heading mb-3 text-text-high">{article.title}</h3>
+              <p className="mb-4 text-text-medium font-body">{article.description}</p>
               <div className="flex justify-between items-center">
                 <span className="text-xs text-text-medium font-ui">{article.date}</span>
                 <Link 

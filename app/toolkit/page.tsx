@@ -164,38 +164,38 @@ export default function Toolkit() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-6xl mx-auto">
             {tools.map((tool) => (
               <div key={tool.id} className={
-                tool.isPopular ? 'card-highlighted' : 
-                tool.isNew ? 'card-new' :
-                'card'
+                tool.isPopular ? 'tool-card card-highlighted' : 
+                tool.isNew ? 'tool-card card-new' :
+                'tool-card'
               }>
-                <div className="p-8 text-center">
-                  <div className={`w-20 h-20 rounded-full flex items-center justify-center text-4xl mx-auto mb-6 ${
+                <div className="p-5 text-center tool-card-content">
+                  <div className={`w-16 h-16 rounded-full flex items-center justify-center text-3xl mx-auto mb-4 ${
                     tool.isPopular ? 'bg-orange-200/30' : 
                     tool.isNew ? 'bg-coral-200/30' :
                     'bg-brand-100'
                   }`}>{tool.icon}</div>
-                  <h3 className="text-xl font-heading mb-4 text-text-high">{tool.title}</h3>
-                  <p className="mb-6 text-text-medium font-body">{tool.description}</p>
+                  <h3 className="text-xl font-heading mb-3 text-text-high">{tool.title}</h3>
+                  <p className="mb-4 text-text-medium font-body">{tool.description}</p>
                   {tool.status === 'ready' ? (
                     <Link
                       href={`/toolkit/tools/${tool.id}`}
-                      className="inline-flex items-center justify-center bg-brand-500 hover:bg-brand-600 text-white px-6 py-3 rounded-lg font-ui transition-all"
+                      className="inline-flex items-center justify-center bg-brand-500 hover:bg-brand-600 text-white px-4 py-2 rounded-lg font-ui transition-all text-sm"
                     >
                       <span>ツールを使う</span>
-                      <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                       </svg>
                     </Link>
                   ) : (
                     <div className="flex flex-col items-center">
                       <button
-                        className="inline-flex items-center justify-center bg-neutral-200 text-text-medium cursor-not-allowed px-6 py-3 rounded-lg font-ui mb-2"
+                        className="inline-flex items-center justify-center bg-neutral-200 text-text-medium cursor-not-allowed px-4 py-2 rounded-lg font-ui mb-1 text-sm"
                         disabled
                       >
                         <span>近日公開</span>
                       </button>
                       {tool.isNew && (
-                        <span className="mt-2 inline-block px-3 py-0.5 bg-coral-200/20 text-coral-500 text-xs rounded-full ui-element">
+                        <span className="mt-1 inline-block px-2 py-0.5 bg-coral-200/20 text-coral-500 text-xs rounded-full ui-element">
                           NEW
                         </span>
                       )}
@@ -272,8 +272,8 @@ export default function Toolkit() {
                 article.isNew ? 'card-new' :
                 'card'
               }>
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-4">
+                <div className="p-5">
+                  <div className="flex items-center justify-between mb-3">
                     <span className="bg-brand-200 text-brand-600 px-3 py-1 text-xs rounded-full font-ui">
                       {article.category}
                     </span>
@@ -288,7 +288,7 @@ export default function Toolkit() {
                       </span>
                     )}
                   </div>
-                  <h3 className="text-xl font-heading mb-4 text-text-high">{article.title}</h3>
+                  <h3 className="text-xl font-heading mb-3 text-text-high">{article.title}</h3>
                   <Link 
                     href={`/toolkit/${article.id}`}
                     className={`inline-flex items-center font-ui ${

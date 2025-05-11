@@ -70,6 +70,15 @@ section + section {
   }
 }
 
+/* インタラクティブ要素の強化 */
+.interactive-element {
+  @apply transition-all duration-300 ease-in-out transform;
+}
+
+.interactive-element:hover {
+  @apply -translate-y-1 shadow-md;
+}
+
 /* フォントの表示調整 */
 .font-space {
   font-family: var(--font-public-sans);
@@ -158,19 +167,29 @@ a {
 
 /* ボタンスタイル */
 .btn-primary {
-  @apply inline-flex items-center justify-center bg-brand-500 text-white px-6 py-3 rounded-lg font-medium transition-all shadow-sm hover:bg-brand-600 hover:shadow-md hover:-translate-y-0.5;
+  @apply inline-flex items-center justify-center bg-brand-500 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 shadow-sm hover:bg-brand-600 hover:shadow-md hover:-translate-y-0.5 relative overflow-hidden;
+}
+
+.btn-primary::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-full h-0.5 bg-white bg-opacity-30;
 }
 
 .btn-secondary {
-  @apply inline-flex items-center justify-center border-2 border-brand-500 text-brand-500 px-6 py-3 rounded-lg font-medium transition-all hover:bg-brand-50 hover:shadow-sm;
+  @apply inline-flex items-center justify-center border-2 border-brand-500 text-brand-500 px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-brand-50 hover:shadow-sm hover:-translate-y-0.5 relative overflow-hidden;
+}
+
+.btn-secondary::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-full h-0.5 bg-brand-200;
 }
 
 .btn-tertiary {
-  @apply inline-flex items-center justify-center bg-white border border-neutral-200 text-text-medium px-6 py-3 rounded-lg font-medium transition-all hover:border-brand-200 hover:text-brand-500 hover:bg-neutral-50;
+  @apply inline-flex items-center justify-center bg-white border border-neutral-200 text-text-medium px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:border-brand-200 hover:text-brand-500 hover:bg-neutral-50 hover:-translate-y-0.5;
 }
 
 .link-text {
-  @apply inline-flex items-center text-brand-500 font-medium transition-all hover:text-brand-600 underline-offset-4 hover:underline;
+  @apply inline-flex items-center text-brand-500 font-medium transition-all duration-300 hover:text-brand-600 underline-offset-4 hover:underline;
 }
 
 .link-subtle {
@@ -183,11 +202,11 @@ button, .button {
 
 /* カードデザイン統一 */
 .card {
-  @apply bg-white rounded-lg border border-neutral-200 overflow-hidden transition-all hover:border-brand-200 hover:shadow-sm p-6 md:p-8;
+  @apply bg-white rounded-lg border border-neutral-200 overflow-hidden transition-all duration-300 hover:border-brand-200 hover:shadow-sm hover:-translate-y-1 p-5 md:p-6 relative;
 }
 
 .card-highlighted {
-  @apply bg-white rounded-lg border border-orange-200 overflow-hidden transition-all hover:border-orange-300 hover:shadow-sm relative p-6 md:p-8;
+  @apply bg-white rounded-lg border border-orange-200 overflow-hidden transition-all duration-300 hover:border-orange-300 hover:shadow-sm hover:-translate-y-1 relative p-5 md:p-6;
 }
 
 .card-highlighted::before {
@@ -196,12 +215,21 @@ button, .button {
 }
 
 .card-new {
-  @apply bg-white rounded-lg border border-coral-200 overflow-hidden transition-all hover:border-coral-500 hover:shadow-sm relative p-6 md:p-8;
+  @apply bg-white rounded-lg border border-coral-200 overflow-hidden transition-all duration-300 hover:border-coral-500 hover:shadow-sm hover:-translate-y-1 relative p-5 md:p-6;
 }
 
 .card-new::before {
   content: '';
   @apply absolute top-0 left-0 w-full h-1 bg-coral-500;
+}
+
+/* ツールカード */
+.tool-card {
+  @apply bg-white rounded-lg border border-neutral-200 overflow-hidden transition-all duration-300 hover:border-brand-200 hover:shadow-sm hover:-translate-y-1 p-4 md:p-5 relative;
+}
+
+.tool-card-content {
+  @apply py-2 px-0;
 }
 
 .font-heading {
@@ -221,11 +249,11 @@ button, .button {
 
 /* セクション区切りの強化 */
 .section-alt {
-  @apply bg-neutral-50 border-t border-b border-neutral-200 py-16 md:py-20;
+  @apply bg-neutral-50 border-t border-b border-neutral-200 py-16 md:py-20 relative;
 }
 
 .section-brand {
-  @apply bg-brand-50 border-t border-b border-brand-100 py-16 md:py-20;
+  @apply bg-brand-50 border-t border-b border-brand-100 py-16 md:py-20 relative;
 }
 
 .section-divided {
@@ -235,6 +263,15 @@ button, .button {
 .section-divided::before {
   content: '';
   @apply absolute left-1/2 top-0 w-24 h-1 bg-brand-200 -translate-x-1/2 -translate-y-1/2 rounded-full;
+}
+
+/* ブランドシェイプ装飾 */
+.brand-shape-circle {
+  @apply absolute rounded-full bg-brand-500 opacity-10 blur-md;
+}
+
+.brand-shape-dot {
+  @apply absolute rounded-full bg-brand-200;
 }
 
 /* コンテナの余白調整 */

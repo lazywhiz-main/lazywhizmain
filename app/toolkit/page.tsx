@@ -149,7 +149,7 @@ export default function Toolkit() {
       </section>
 
       {/* Tools Section */}
-      <section className="py-24 bg-neutral-50 relative overflow-hidden">
+      <section className="py-24 section-alt relative overflow-hidden">
         {/* 装飾要素 */}
         <div className="absolute right-0 top-0 w-96 h-96 bg-brand-500 rounded-full opacity-10 translate-x-1/3 -translate-y-1/3"></div>
         <div className="absolute left-0 bottom-0 w-64 h-64 bg-brand-200 rounded-full opacity-30 -translate-x-1/3 translate-y-1/3"></div>
@@ -161,7 +161,7 @@ export default function Toolkit() {
             <p className="mt-4 text-text-medium font-body max-w-2xl mx-auto">日々の作業を効率化するための便利なWebツール</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 max-w-6xl mx-auto">
             {tools.map((tool) => (
               <div key={tool.id} className={
                 tool.isPopular ? 'card-highlighted' : 
@@ -254,7 +254,7 @@ export default function Toolkit() {
       </section>
 
       {/* Featured Articles */}
-      <section className="py-24 bg-neutral-50 relative overflow-hidden">
+      <section className="py-24 section-alt relative overflow-hidden">
         {/* 装飾要素 */}
         <div className="absolute left-0 top-0 w-64 h-64 bg-brand-200 rounded-full opacity-30 -translate-x-1/2 -translate-y-1/2"></div>
         <div className="absolute right-0 bottom-0 w-96 h-96 bg-brand-500 rounded-full opacity-10 translate-x-1/3 translate-y-1/3"></div>

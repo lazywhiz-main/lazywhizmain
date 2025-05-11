@@ -21,6 +21,29 @@ body {
   @apply font-sans;
 }
 
+/* レスポンシブ最適化 - モバイル調整 */
+@media (max-width: 640px) {
+  .container {
+    @apply px-4;
+  }
+  
+  section {
+    @apply py-12;
+  }
+  
+  h1 {
+    @apply mb-4;
+  }
+  
+  h2 {
+    @apply mb-6;
+  }
+  
+  .card {
+    @apply p-5;
+  }
+}
+
 /* フォントの表示調整 */
 .font-space {
   font-family: var(--font-public-sans);
@@ -42,27 +65,45 @@ body {
 
 /* 見出し階層のバランス調整 */
 h1 {
-  @apply text-text-high font-heading text-4xl md:text-5xl;
+  @apply text-text-high font-heading text-4xl md:text-5xl leading-tight;
 }
 
 h2 {
-  @apply text-text-high font-heading text-3xl md:text-4xl;
+  @apply text-text-high font-heading text-3xl md:text-4xl leading-tight;
 }
 
 h3 {
-  @apply text-text-high font-heading text-2xl md:text-3xl;
+  @apply text-text-high font-heading text-2xl md:text-3xl leading-tight;
 }
 
 h4 {
-  @apply text-text-high font-heading text-xl md:text-2xl;
+  @apply text-text-high font-heading text-xl md:text-2xl leading-tight;
 }
 
 h5 {
-  @apply text-text-high font-heading text-lg md:text-xl;
+  @apply text-text-high font-heading text-lg md:text-xl leading-tight;
 }
 
 h6 {
-  @apply text-text-high font-heading text-base md:text-lg;
+  @apply text-text-high font-heading text-base md:text-lg leading-tight;
+}
+
+.heading-accent {
+  @apply relative pb-4 mb-6;
+}
+
+.heading-accent::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-16 h-1 bg-brand-200 rounded-full;
+}
+
+.heading-center-accent {
+  @apply relative pb-4 mb-6;
+}
+
+.heading-center-accent::after {
+  content: '';
+  @apply absolute bottom-0 left-1/2 w-16 h-1 bg-brand-200 rounded-full -translate-x-1/2;
 }
 
 /* 英語テキスト（ロゴ、見出し、UI要素）向け */
@@ -91,7 +132,23 @@ a {
 
 /* ボタンスタイル */
 .btn-primary {
-  @apply bg-brand-500 hover:bg-brand-600 text-white px-4 py-2 rounded transition-colors font-space font-ui;
+  @apply inline-flex items-center justify-center bg-brand-500 text-white px-6 py-3 rounded-lg font-medium transition-all shadow-sm hover:bg-brand-600 hover:shadow-md hover:-translate-y-0.5;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center border-2 border-brand-500 text-brand-500 px-6 py-3 rounded-lg font-medium transition-all hover:bg-brand-50 hover:shadow-sm;
+}
+
+.btn-tertiary {
+  @apply inline-flex items-center justify-center bg-white border border-neutral-200 text-text-medium px-6 py-3 rounded-lg font-medium transition-all hover:border-brand-200 hover:text-brand-500 hover:bg-neutral-50;
+}
+
+.link-text {
+  @apply inline-flex items-center text-brand-500 font-medium transition-all hover:text-brand-600 underline-offset-4 hover:underline;
+}
+
+.link-subtle {
+  @apply inline-flex items-center text-text-medium font-medium transition-all hover:text-brand-500;
 }
 
 button, .button {
@@ -104,15 +161,25 @@ button, .button {
 
 /* カードデザイン統一 */
 .card {
-  @apply bg-white rounded-lg border border-neutral-200 overflow-hidden transition-all hover:border-brand-200;
+  @apply bg-white rounded-lg border border-neutral-200 overflow-hidden transition-all hover:border-brand-200 hover:shadow-sm;
 }
 
 .card-highlighted {
-  @apply bg-white rounded-lg border-2 border-orange-200 overflow-hidden transition-all;
+  @apply bg-white rounded-lg border border-orange-200 overflow-hidden transition-all hover:border-orange-300 hover:shadow-sm relative;
+}
+
+.card-highlighted::before {
+  content: '';
+  @apply absolute top-0 left-0 w-full h-1 bg-orange-300;
 }
 
 .card-new {
-  @apply bg-white rounded-lg border border-coral-200 overflow-hidden transition-all;
+  @apply bg-white rounded-lg border border-coral-200 overflow-hidden transition-all hover:border-coral-500 hover:shadow-sm relative;
+}
+
+.card-new::before {
+  content: '';
+  @apply absolute top-0 left-0 w-full h-1 bg-coral-500;
 }
 
 .font-heading {
@@ -128,4 +195,22 @@ button, .button {
 .font-ui {
   font-family: var(--font-public-sans);
   font-weight: 600;
+}
+
+/* セクション区切りの強化 */
+.section-alt {
+  @apply bg-neutral-50 border-t border-b border-neutral-200;
+}
+
+.section-brand {
+  @apply bg-brand-50 border-t border-b border-brand-100;
+}
+
+.section-divided {
+  @apply relative;
+}
+
+.section-divided::before {
+  content: '';
+  @apply absolute left-1/2 top-0 w-16 h-1 bg-brand-200 -translate-x-1/2 -translate-y-1/2 rounded-full;
 } 

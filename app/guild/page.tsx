@@ -125,7 +125,7 @@ export default function GuildPage() {
       </section>
 
       {/* Discord Overview - 新規追加 */}
-      <section className="py-16 bg-gradient-to-br from-neutral-50 to-brand-50 mb-20">
+      <section className="py-16 section-brand mb-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">Discordコミュニティの構成</h2>
@@ -229,7 +229,7 @@ export default function GuildPage() {
       <section className="mb-20">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-10 text-center">コミュニティに参加するメリット</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             <div className="card p-8">
               <div className="w-16 h-16 bg-brand-100 text-brand-500 rounded-full flex items-center justify-center mb-6">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
@@ -262,7 +262,7 @@ export default function GuildPage() {
       </section>
 
       {/* Upcoming Events */}
-      <section className="mb-20">
+      <section className="mb-20 section-alt py-16">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold mb-4">今後のイベント</h2>
@@ -275,10 +275,10 @@ export default function GuildPage() {
           <div className="bg-white rounded-xl shadow-md p-6 md:p-8 mb-8 max-w-5xl mx-auto">
             {/* カレンダー風レイアウト */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-brand-50 rounded-lg p-5">
+              <div className="bg-white rounded-lg p-5 border border-neutral-200">
                 <div className="mb-3 flex justify-between items-center">
                   <div className="text-brand-500 font-semibold">7月</div>
-                  <div className="bg-brand-500 text-white text-xs px-2 py-1 rounded">今月</div>
+                  <div className="border border-brand-500 text-brand-500 text-xs px-2 py-1 rounded">今月</div>
                 </div>
                 
                 <div className="rounded-lg overflow-hidden border border-neutral-200">
@@ -287,7 +287,7 @@ export default function GuildPage() {
                     <div className="flex-1 py-2 px-3">イベント</div>
                   </div>
                   
-                  <div className="flex items-center hover:bg-brand-50 transition-colors cursor-pointer border-t border-neutral-200">
+                  <div className="flex items-center hover:bg-neutral-50 transition-colors cursor-pointer border-t border-neutral-200">
                     <div className="w-10 py-4 text-center font-bold text-brand-500 border-r border-neutral-200">15</div>
                     <div className="flex-1 py-3 px-3">
                       <div className="font-medium">クリエイティブワークショップ</div>
@@ -295,7 +295,7 @@ export default function GuildPage() {
                     </div>
                   </div>
                   
-                  <div className="flex items-center hover:bg-brand-50 transition-colors cursor-pointer border-t border-neutral-200">
+                  <div className="flex items-center hover:bg-neutral-50 transition-colors cursor-pointer border-t border-neutral-200">
                     <div className="w-10 py-4 text-center font-bold text-neutral-400 border-r border-neutral-200">28</div>
                     <div className="flex-1 py-3 px-3">
                       <div className="font-medium">効率化ティップス共有会</div>
@@ -305,7 +305,7 @@ export default function GuildPage() {
                 </div>
               </div>
               
-              <div className="bg-brand-50 rounded-lg p-5">
+              <div className="bg-white rounded-lg p-5 border border-neutral-200">
                 <div className="mb-3 flex justify-between items-center">
                   <div className="text-brand-500 font-semibold">8月</div>
                   <div className="bg-neutral-200 text-neutral-600 text-xs px-2 py-1 rounded">来月</div>
@@ -317,7 +317,7 @@ export default function GuildPage() {
                     <div className="flex-1 py-2 px-3">イベント</div>
                   </div>
                   
-                  <div className="flex items-center hover:bg-brand-50 transition-colors cursor-pointer border-t border-neutral-200">
+                  <div className="flex items-center hover:bg-neutral-50 transition-colors cursor-pointer border-t border-neutral-200">
                     <div className="w-10 py-4 text-center font-bold text-neutral-400 border-r border-neutral-200">5</div>
                     <div className="flex-1 py-3 px-3">
                       <div className="font-medium">ビジネスネットワーキング</div>
@@ -325,7 +325,7 @@ export default function GuildPage() {
                     </div>
                   </div>
                   
-                  <div className="flex items-center hover:bg-brand-50 transition-colors cursor-pointer border-t border-neutral-200">
+                  <div className="flex items-center hover:bg-neutral-50 transition-colors cursor-pointer border-t border-neutral-200">
                     <div className="w-10 py-4 text-center font-bold text-neutral-400 border-r border-neutral-200">20</div>
                     <div className="flex-1 py-3 px-3">
                       <div className="font-medium">効率化ツール共有会</div>
@@ -367,7 +367,7 @@ export default function GuildPage() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             <div className="bg-white p-6 rounded-xl shadow-md">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 rounded-full bg-brand-200 flex items-center justify-center text-brand-600 mr-3">MT</div>

@@ -34,13 +34,13 @@ export default function Home() {
               LazyWhizは、最小限の労力で最大限の成果を生み出すための知恵とツールを提供します。頑張りすぎず賢く生きることで、本当に大切なことに集中できる世界を目指しています。
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/about" className="inline-flex items-center justify-center bg-brand-500 hover:bg-brand-600 text-white px-8 py-4 rounded-lg font-ui transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+              <Link href="/about" className="btn-primary">
                 <span>ブランドストーリー</span>
                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                 </svg>
               </Link>
-              <Link href="/contact" className="inline-flex items-center justify-center border-2 border-brand-500 text-brand-500 hover:bg-brand-500 hover:text-white px-8 py-4 rounded-lg font-ui transition-all">
+              <Link href="/contact" className="btn-secondary">
                 <span>ひと声かける</span>
                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
@@ -59,7 +59,7 @@ export default function Home() {
             <h2 className="text-4xl font-heading text-text-high">LazyWhizの提供サービス</h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
             <div className="bg-white p-8 rounded-lg border border-neutral-200 transition-all hover:border-brand-300 flex flex-col h-full">
               <div className="w-16 h-16 bg-brand-200 rounded-full flex items-center justify-center text-brand-500 mb-6">
                 <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -68,7 +68,7 @@ export default function Home() {
               </div>
               <h3 className="text-2xl font-heading mb-4 text-text-high">共創開発</h3>
               <p className="text-text-medium font-body mb-6 flex-grow">あなたのビジネスに最適な技術ソリューションを提供します。本質に集中し、意味ある価値創出を共に目指します。</p>
-              <Link href="/service" className="inline-flex items-center text-brand-500 hover:text-brand-600 font-ui mt-auto">
+              <Link href="/service" className="link-text mt-auto">
                 <span>詳しく見る</span>
                 <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
@@ -86,7 +86,7 @@ export default function Home() {
               <p className="text-text-medium font-body mb-6 flex-grow">日々の作業を本質化するためのミニツールと、賢く怠けるためのアイデアを集めたコンテンツライブラリ。</p>
               <div className="flex items-center justify-between mt-auto">
                 <span className="px-3 py-0.5 bg-orange-200/20 text-orange-600 text-xs rounded-full ui-element">人気</span>
-                <Link href="/toolkit" className="inline-flex items-center text-orange-300 hover:text-orange-600 font-ui">
+                <Link href="/toolkit" className="link-text text-orange-300 hover:text-orange-600">
                   <span>詳しく見る</span>
                   <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
@@ -105,7 +105,7 @@ export default function Home() {
               <p className="text-text-medium font-body mb-6 flex-grow">同じ志を持つ仲間と共に、意味ある挑戦と創造的な対話を通じて成長し合う場所。価値観を共有し、共に学び合います。</p>
               <div className="flex items-center justify-between mt-auto">
                 <span className="px-3 py-0.5 bg-coral-200/20 text-coral-500 text-xs rounded-full ui-element">NEW</span>
-                <Link href="/guild" className="inline-flex items-center text-coral-500 hover:text-coral-600 font-ui">
+                <Link href="/guild" className="link-text text-coral-500 hover:text-coral-600">
                   <span>詳しく見る</span>
                   <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
@@ -118,7 +118,7 @@ export default function Home() {
       </section>
 
       {/* Featured Work */}
-      <section className="py-24 bg-neutral-50 relative overflow-hidden">
+      <section className="py-24 section-alt relative overflow-hidden">
         {/* 装飾要素 */}
         <div className="absolute left-0 top-0 w-64 h-64 bg-brand-200 rounded-full opacity-30 -translate-x-1/2 -translate-y-1/2"></div>
         <div className="absolute right-0 bottom-0 w-96 h-96 bg-brand-500 rounded-full opacity-10 translate-x-1/3 translate-y-1/3"></div>
@@ -129,7 +129,7 @@ export default function Home() {
             <h2 className="text-4xl font-heading text-text-high">価値ある挑戦</h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <div className="bg-white rounded-lg overflow-hidden border border-brand-300 transition-all hover:border-brand-400">
               <div className="relative h-56 w-full bg-gradient-to-br from-brand-200 to-brand-500 flex items-center justify-center">
                 <div className="absolute inset-0 opacity-20 flex items-center justify-center">

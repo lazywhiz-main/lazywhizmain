@@ -25,7 +25,7 @@ const Header = () => {
 
   return (
     <header className="bg-white shadow-md relative z-50">
-      <div className="container py-4 px-4 flex justify-between items-center">
+      <div className="container py-5 md:py-6 flex justify-between items-center">
         <Link href="/" className="text-2xl font-bold text-text-high">
           <span className="text-brand-500">Lazy</span>Whiz
         </Link>
@@ -43,13 +43,13 @@ const Header = () => {
         
         {/* デスクトップナビゲーション */}
         <nav className="hidden md:block">
-          <ul className="flex space-x-6 items-center">
-            <li><Link href="/about" className="hover:text-brand-500 transition-colors">About</Link></li>
-            <li><Link href="/toolkit" className="hover:text-brand-500 transition-colors">Toolkit</Link></li>
-            <li><Link href="/guild" className="hover:text-brand-500 transition-colors">Guild</Link></li>
-            <li><Link href="/service" className="hover:text-brand-500 transition-colors">Service</Link></li>
-            <li><Link href="/works" className="hover:text-brand-500 transition-colors">Works</Link></li>
-            <li><Link href="/contact" className="bg-brand-500 hover:bg-brand-600 text-white px-4 py-2 rounded transition-colors">Contact</Link></li>
+          <ul className="flex space-x-8 items-center">
+            <li><Link href="/about" className="hover:text-brand-500 transition-colors font-medium">About</Link></li>
+            <li><Link href="/toolkit" className="hover:text-brand-500 transition-colors font-medium">Toolkit</Link></li>
+            <li><Link href="/guild" className="hover:text-brand-500 transition-colors font-medium">Guild</Link></li>
+            <li><Link href="/service" className="hover:text-brand-500 transition-colors font-medium">Service</Link></li>
+            <li><Link href="/works" className="hover:text-brand-500 transition-colors font-medium">Works</Link></li>
+            <li><Link href="/contact" className="bg-brand-500 hover:bg-brand-600 text-white px-5 py-2.5 rounded-lg transition-colors font-medium">Contact</Link></li>
           </ul>
         </nav>
       </div>
@@ -59,15 +59,15 @@ const Header = () => {
         className={`
           fixed inset-0 bg-white z-40 transition-all duration-300 md:hidden
           ${isMenuOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full pointer-events-none'}
-          pt-20 px-4 shadow-lg
+          pt-24 px-6 shadow-lg
         `}
       >
         <nav>
-          <ul className="flex flex-col space-y-6 items-center text-lg">
+          <ul className="flex flex-col space-y-7 items-center text-lg">
             <li>
               <Link 
                 href="/about" 
-                className="hover:text-brand-500 transition-colors"
+                className="hover:text-brand-500 transition-colors font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 About
@@ -76,7 +76,7 @@ const Header = () => {
             <li>
               <Link 
                 href="/toolkit" 
-                className="hover:text-brand-500 transition-colors"
+                className="hover:text-brand-500 transition-colors font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Toolkit
@@ -85,7 +85,7 @@ const Header = () => {
             <li>
               <Link 
                 href="/guild" 
-                className="hover:text-brand-500 transition-colors"
+                className="hover:text-brand-500 transition-colors font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Guild
@@ -94,7 +94,7 @@ const Header = () => {
             <li>
               <Link 
                 href="/service" 
-                className="hover:text-brand-500 transition-colors"
+                className="hover:text-brand-500 transition-colors font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Service
@@ -103,7 +103,7 @@ const Header = () => {
             <li>
               <Link 
                 href="/works" 
-                className="hover:text-brand-500 transition-colors"
+                className="hover:text-brand-500 transition-colors font-medium"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Works
@@ -112,7 +112,7 @@ const Header = () => {
             <li>
               <Link 
                 href="/contact" 
-                className="bg-brand-500 hover:bg-brand-600 text-white px-6 py-3 rounded-lg transition-colors inline-block"
+                className="bg-brand-500 hover:bg-brand-600 text-white px-6 py-3 rounded-lg transition-colors inline-block font-medium mt-2"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact

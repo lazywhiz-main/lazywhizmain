@@ -21,6 +21,28 @@ body {
   @apply font-sans;
 }
 
+/* 基本余白・呼吸感の設定 */
+section {
+  @apply py-16 md:py-20;
+}
+
+p:not(:last-child) {
+  @apply mb-6;
+}
+
+ul:not([class]), ol:not([class]) {
+  @apply my-6;
+}
+
+ul:not([class]) li:not(:last-child), ol:not([class]) li:not(:last-child) {
+  @apply mb-3;
+}
+
+/* セクション間の区切り強化 */
+section + section {
+  @apply relative;
+}
+
 /* レスポンシブ最適化 - モバイル調整 */
 @media (max-width: 640px) {
   .container {
@@ -41,6 +63,10 @@ body {
   
   .card {
     @apply p-5;
+  }
+  
+  p:not(:last-child) {
+    @apply mb-4;
   }
 }
 
@@ -65,31 +91,31 @@ body {
 
 /* 見出し階層のバランス調整 */
 h1 {
-  @apply text-text-high font-heading text-4xl md:text-5xl leading-tight;
+  @apply text-text-high font-heading text-4xl md:text-5xl leading-tight mb-8;
 }
 
 h2 {
-  @apply text-text-high font-heading text-3xl md:text-4xl leading-tight;
+  @apply text-text-high font-heading text-3xl md:text-4xl leading-tight mb-6;
 }
 
 h3 {
-  @apply text-text-high font-heading text-2xl md:text-3xl leading-tight;
+  @apply text-text-high font-heading text-2xl md:text-3xl leading-tight mb-5;
 }
 
 h4 {
-  @apply text-text-high font-heading text-xl md:text-2xl leading-tight;
+  @apply text-text-high font-heading text-xl md:text-2xl leading-tight mb-4;
 }
 
 h5 {
-  @apply text-text-high font-heading text-lg md:text-xl leading-tight;
+  @apply text-text-high font-heading text-lg md:text-xl leading-tight mb-3;
 }
 
 h6 {
-  @apply text-text-high font-heading text-base md:text-lg leading-tight;
+  @apply text-text-high font-heading text-base md:text-lg leading-tight mb-3;
 }
 
 .heading-accent {
-  @apply relative pb-4 mb-6;
+  @apply relative pb-4 mb-8;
 }
 
 .heading-accent::after {
@@ -98,7 +124,7 @@ h6 {
 }
 
 .heading-center-accent {
-  @apply relative pb-4 mb-6;
+  @apply relative pb-4 mb-8;
 }
 
 .heading-center-accent::after {
@@ -155,17 +181,13 @@ button, .button {
   @apply font-space;
 }
 
-.container {
-  @apply mx-auto px-4 max-w-7xl;
-}
-
 /* カードデザイン統一 */
 .card {
-  @apply bg-white rounded-lg border border-neutral-200 overflow-hidden transition-all hover:border-brand-200 hover:shadow-sm;
+  @apply bg-white rounded-lg border border-neutral-200 overflow-hidden transition-all hover:border-brand-200 hover:shadow-sm p-6 md:p-8;
 }
 
 .card-highlighted {
-  @apply bg-white rounded-lg border border-orange-200 overflow-hidden transition-all hover:border-orange-300 hover:shadow-sm relative;
+  @apply bg-white rounded-lg border border-orange-200 overflow-hidden transition-all hover:border-orange-300 hover:shadow-sm relative p-6 md:p-8;
 }
 
 .card-highlighted::before {
@@ -174,7 +196,7 @@ button, .button {
 }
 
 .card-new {
-  @apply bg-white rounded-lg border border-coral-200 overflow-hidden transition-all hover:border-coral-500 hover:shadow-sm relative;
+  @apply bg-white rounded-lg border border-coral-200 overflow-hidden transition-all hover:border-coral-500 hover:shadow-sm relative p-6 md:p-8;
 }
 
 .card-new::before {
@@ -199,11 +221,11 @@ button, .button {
 
 /* セクション区切りの強化 */
 .section-alt {
-  @apply bg-neutral-50 border-t border-b border-neutral-200;
+  @apply bg-neutral-50 border-t border-b border-neutral-200 py-16 md:py-20;
 }
 
 .section-brand {
-  @apply bg-brand-50 border-t border-b border-brand-100;
+  @apply bg-brand-50 border-t border-b border-brand-100 py-16 md:py-20;
 }
 
 .section-divided {
@@ -212,5 +234,10 @@ button, .button {
 
 .section-divided::before {
   content: '';
-  @apply absolute left-1/2 top-0 w-16 h-1 bg-brand-200 -translate-x-1/2 -translate-y-1/2 rounded-full;
+  @apply absolute left-1/2 top-0 w-24 h-1 bg-brand-200 -translate-x-1/2 -translate-y-1/2 rounded-full;
+}
+
+/* コンテナの余白調整 */
+.container {
+  @apply mx-auto px-4 md:px-6 max-w-7xl;
 } 

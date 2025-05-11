@@ -26,8 +26,7 @@ export default function Home() {
         
         <div className="container relative z-10">
           <div className="max-w-2xl">
-            <span className="inline-block mb-4 px-4 py-2 bg-brand-200 text-brand-600 rounded-full text-sm font-ui">LazyWhiz コンセプト</span>
-            <h1 className="text-5xl md:text-6xl font-heading mb-6">
+            <h1 className="text-4xl md:text-5xl font-heading mb-6">
               頑張りすぎず、<br />
               <span className="text-brand-500">賢く生きる未来へ</span>
             </h1>

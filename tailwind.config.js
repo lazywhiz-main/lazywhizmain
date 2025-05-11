@@ -33,8 +33,9 @@ module.exports = {
         },
       },
       fontFamily: {
-        'space': ['var(--font-space-grotesk)', 'sans-serif'],
-        'biz': ['var(--font-biz-udgothic)', 'sans-serif'],
+        sans: ['Noto Sans JP', 'Public Sans', 'Hiragino Sans', 'Meiryo', 'sans-serif'],
+        biz: ['Noto Sans JP', 'Hiragino Sans', 'Meiryo', 'sans-serif'],
+        ui: ['Public Sans', 'system-ui', 'sans-serif'],
       },
       fontWeight: {
         'heading': '700',

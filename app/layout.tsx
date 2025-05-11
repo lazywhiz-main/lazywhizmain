@@ -6,27 +6,18 @@ import Footer from '@/components/Footer';
 import { GoogleAnalytics } from '@next/third-parties/google'
 import CookieConsent from '@/components/CookieConsent';
 import localFont from 'next/font/local';
+import { Public_Sans } from 'next/font/google';
 
-// 日本語用フォント
-const bizUDGothic = localFont({
-  src: [
-    {
-      path: '../public/fonts/BIZUDGothic-Regular.ttf',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: '../public/fonts/BIZUDGothic-Bold.ttf',
-      weight: '700',
-      style: 'normal',
-    }
-  ],
+// 英語用フォント
+const publicSans = Public_Sans({
+  subsets: ['latin'],
   display: 'swap',
-  variable: '--font-biz-udgothic',
-  fallback: ['Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Meiryo', 'sans-serif'],
-  preload: false,
-  adjustFontFallback: false,
+  weight: ['400', '600'],
+  variable: '--font-public-sans',
+  preload: true,
 });
+
+// BIZ UDGothicのlocalFont設定は削除
 
 export const metadata: Metadata = {
   title: 'LazyWhiz - 頑張りすぎず、賢く生きる',
@@ -66,28 +57,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ja" className={`${bizUDGothic.variable}`}>
+    <html lang="ja" className={`${publicSans.variable}`}>
       <head>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          rel="preload"
-          href="/fonts/BIZUDGothic-Regular.ttf"
-          as="font"
-          type="font/ttf"
-          crossOrigin="anonymous"
-        />
-        <link
-          rel="preload"
-          href="/fonts/BIZUDGothic-Bold.ttf"
-          as="font"
-          type="font/ttf"
-          crossOrigin="anonymous"
-        />
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet" />
       </head>
-      <body className="font-biz antialiased">
+      <body className="font-sans antialiased">
         <Header />
         <main>{children}</main>
         <Footer />

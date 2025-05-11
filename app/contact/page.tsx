@@ -61,7 +61,7 @@ export default function Contact() {
             </h1>
             <p className="text-lg md:text-xl text-text-medium mb-8 max-w-2xl">
               LazyWhizへのお問い合わせ、ご相談はこちらからお気軽にどうぞ。
-              <span className="font-medium">最小限の入力で最大限の成果</span>を得るための効率的な相談フォームをご用意しました。
+              ご質問やご相談内容をお聞かせください。
             </p>
           </div>
         </div>
@@ -113,10 +113,10 @@ export default function Contact() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                       </svg>
                     </div>
-                    <h3 className="font-medium text-text-high">LazyTip: 効率的な相談のコツ</h3>
+                    <h3 className="font-medium text-text-high">LazyTip: 相談のコツ</h3>
                   </div>
                   <p className="text-sm text-text-medium">
-                    具体的な課題と目標を明確に伝えることで、より的確な提案が可能になります。また、現状の課題点を優先度順に列挙いただくと、効率的に解決策を提示できます。
+                    具体的な課題と目標を明確に伝えることで、より的確な提案が可能になります。また、現状の課題点を優先度順に列挙いただくと、より良い解決策を提示できます。
                   </p>
                 </div>
               )}
